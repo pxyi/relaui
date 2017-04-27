@@ -45,7 +45,8 @@ input, textarea, select {
   font-weight: inherit; }
 
 body {
-  font: 14px/1.5 \5FAE\8F6F\96C5\9ED1,sans-serif; }
+  font: 14px/1.5 \5FAE\8F6F\96C5\9ED1,sans-serif;
+  color: #333; }
 
 .clearfix:after {
   content: "\0020";
@@ -108,6 +109,7 @@ img {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+/* 常用方法 */
 /* top and left center */
 /* frame */
 html,
@@ -259,7 +261,7 @@ body,
     .ui-nav .ui-items-call a {
       display: block;
       height: 40px;
-      padding-left: 45px;
+      padding-left: 50px;
       line-height: 40px;
       position: relative; }
       .ui-nav .ui-items-call a:hover {
@@ -342,13 +344,123 @@ body,
     overflow: hidden; }
     .ui-container .ui-container-over > div {
       height: 100%;
+      padding: 15px;
       overflow: auto; }
 
+.view-box {
+  min-height: 100%; }
+
 /* layout style */
+.view-box > h1 {
+  color: #555;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 10px 0 20px 0;
+  position: relative; }
+  .view-box > h1 > small {
+    display: block;
+    color: #999;
+    font-size: 11px;
+    line-height: 1;
+    margin-top: 8px; }
+
+.ui-quote {
+  margin-bottom: 20px;
+  padding: 15px;
+  line-height: 22px;
+  border-left: 5px solid #00a2ca;
+  border-radius: 0 2px 2px 0;
+  background-color: #f2f2f2; }
+
+.ui-pre-code {
+  width: 100%;
+  height: 700px;
+  padding: 12px;
+  color: #881280;
+  font-size: 13px;
+  font-family: Courier New;
+  background-color: #eaedf1;
+  border: solid 1px #eaedf1;
+  resize: none; }
+
+.ui-tip {
+  margin: 20px 0px;
+  padding: 8px 36px;
+  color: #666;
+  background: #f1f6fa;
+  border: solid 1px #e2eced;
+  position: relative; }
+  .ui-tip:before {
+    display: block;
+    content: '\e72b';
+    color: #00a2ca;
+    font-size: 20px;
+    line-height: 22px;
+    font-family: 'relaicon';
+    position: absolute;
+    left: 10px; }
+
 /* 导航 */
 /* form表单 */
 /* table */
+.ui-table {
+  width: 100%; }
+  .ui-table th,
+  .ui-table td {
+    padding: 8px;
+    font-size: 13px; }
+  .ui-table th {
+    color: #777; }
+  .ui-table td {
+    color: #444; }
+  .ui-table thead tr {
+    background: #f5f6fa; }
+  .ui-table[ui-hover] tbody tr:hover {
+    background: #f9f9fa;
+    -webkit-transition: background 0.2s;
+    -o-transition: background 0.2s;
+    transition: background 0.2s; }
+  .ui-table[ui-background='even'] tbody tr:nth-child(even) {
+    background: #f9f9fa; }
+  .ui-table[ui-background='odd'] tbody tr:nth-child(odd) {
+    background: #f9f9fa; }
+  .ui-table[ui-border] {
+    border: solid 1px #e1e6eb; }
+  .ui-table[ui-border='all'] thead th {
+    border-right: solid 1px #e1e6eb; }
+  .ui-table[ui-border='all'] tbody td {
+    border-right: solid 1px #e1e6eb; }
+  .ui-table[ui-border='all'] thead tr {
+    border-bottom: solid 1px #e1e6eb; }
+  .ui-table[ui-border='all'] tbody tr {
+    border-bottom: solid 1px #e1e6eb; }
+  .ui-table[ui-border='row'] thead tr {
+    border-bottom: solid 1px #e1e6eb; }
+  .ui-table[ui-border='row'] tbody tr {
+    border-bottom: solid 1px #e1e6eb; }
+  .ui-table[ui-border='col'] thead th {
+    border-right: solid 1px #e1e6eb; }
+  .ui-table[ui-border='col'] tbody td {
+    border-right: solid 1px #e1e6eb; }
+  .ui-table[ui-align='left'] th,
+  .ui-table[ui-align='left'] td {
+    text-align: left !important; }
+  .ui-table[ui-align='center'] th,
+  .ui-table[ui-align='center'] td {
+    text-align: center !important; }
+  .ui-table[ui-align='right'] th,
+  .ui-table[ui-align='right'] td {
+    text-align: right !important; }
+
 /* 按钮 */
+.ui-btn {
+  display: block; }
+
+input,
+select,
+textarea {
+  outline: none; }
+
 /* pages */
 /* loading */
 .ui-loading-box, .ui-confirm-box {
@@ -481,4 +593,140 @@ body,
 
 /* 提示框 */
 /* 选项卡 */
+.ui-tabs-box .ui-tabs-title {
+  border-bottom: solid 1px #ddd; }
+  .ui-tabs-box .ui-tabs-title ul {
+    zoom: 1; }
+    .ui-tabs-box .ui-tabs-title ul:after {
+      display: block;
+      content: '';
+      height: 0;
+      clear: both; }
+  .ui-tabs-box .ui-tabs-title li {
+    float: left;
+    margin-left: -1px;
+    margin-bottom: -1px;
+    border: solid 1px #ddd;
+    background: #fbfaf8; }
+    .ui-tabs-box .ui-tabs-title li > a {
+      display: block;
+      min-width: 80px;
+      font-size: 13px;
+      text-align: center;
+      padding: 10px 15px; }
+    .ui-tabs-box .ui-tabs-title li.active {
+      border-top: 0;
+      border-bottom: 0;
+      background: #fff; }
+      .ui-tabs-box .ui-tabs-title li.active > a {
+        border-top: solid 2px #00a2ca; }
+    .ui-tabs-box .ui-tabs-title li:hover {
+      color: #00a2ca;
+      background: #fff; }
+    .ui-tabs-box .ui-tabs-title li:first-child {
+      margin-left: 0; }
+
+.ui-tabs-box .ui-tabs-body > div {
+  display: none; }
+  .ui-tabs-box .ui-tabs-body > div.active {
+    display: block; }
+
 /* 插件 */
+/* 常用样式 */
+.ui-padding-5 {
+  padding: 5px; }
+
+.ui-padding-10 {
+  padding: 10px; }
+
+.ui-padding-12 {
+  padding: 12px; }
+
+.ui-padding-15 {
+  padding: 15px; }
+
+.ui-padding-20 {
+  padding: 20px; }
+
+.ui-padding-col-5 {
+  padding: 0 5px; }
+
+.ui-padding-col-10 {
+  padding: 0 10px; }
+
+.ui-padding-col-12 {
+  padding: 0 12px; }
+
+.ui-padding-col-15 {
+  padding: 0 15px; }
+
+.ui-padding-col-20 {
+  padding: 0 20px; }
+
+.ui-padding-row-5 {
+  padding: 5px 0; }
+
+.ui-padding-row-10 {
+  padding: 10px 0; }
+
+.ui-padding-row-12 {
+  padding: 12px 0; }
+
+.ui-padding-row-15 {
+  padding: 15px 0; }
+
+.ui-padding-row-20 {
+  padding: 20px 0; }
+
+/* margin */
+.ui-margin-5 {
+  margin: 5px; }
+
+.ui-margin-10 {
+  margin: 10px; }
+
+.ui-margin-12 {
+  margin: 12px; }
+
+.ui-margin-15 {
+  margin: 15px; }
+
+.ui-margin-20 {
+  margin: 20px; }
+
+.ui-margin-col-5 {
+  margin: 0 5px; }
+
+.ui-margin-col-10 {
+  margin: 0 10px; }
+
+.ui-margin-col-12 {
+  margin: 0 12px; }
+
+.ui-margin-col-15 {
+  margin: 0 15px; }
+
+.ui-margin-col-20 {
+  margin: 0 20px; }
+
+.ui-margin-row-5 {
+  margin: 5px 0; }
+
+.ui-margin-row-10 {
+  margin: 10px 0; }
+
+.ui-margin-row-12 {
+  margin: 12px 0; }
+
+.ui-margin-row-15 {
+  margin: 15px 0; }
+
+.ui-margin-row-20 {
+  margin: 20px 0; }
+
+/* color */
+.ui-color-red {
+  color: #f00; }
+
+.ui-color-blue {
+  color: #00a2ca; }

@@ -1,0 +1,52 @@
+$border: solid 1px #ddd;
+.ui-tabs-box{
+	.ui-tabs-title{
+		border-bottom: $border;
+		ul{
+			zoom:1;
+			&:after{
+				display:block;
+				content:'';
+				height:0;
+				clear:both;
+			}
+		}
+		li{
+			float: left;
+			margin-left: -1px;
+			margin-bottom: -1px;
+			border: $border;
+			background: #fbfaf8;
+			>a{
+				display: block;
+				min-width: 80px;
+				font-size: 13px;
+				text-align: center;
+				padding: 10px 15px;
+			}
+			&.active{
+				border-top: 0;
+				border-bottom: 0;
+				background: #fff;
+				>a{
+					border-top: solid 2px #00a2ca;
+				}
+			}
+			&:hover{
+				color: #00a2ca;
+				background: #fff;
+			}
+			&:first-child{
+				margin-left: 0;
+			}
+		}
+	}
+	.ui-tabs-body{
+		>div{
+			display: none;
+			&.active{
+				display: block;
+			}
+		}
+	}
+}

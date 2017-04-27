@@ -150,7 +150,7 @@ body,
 		a{
 			display: block;
 			height: 40px;
-			padding-left: 45px;
+			padding-left: 50px;
 			line-height: 40px;
 			position: relative;
 			&:hover{
@@ -233,7 +233,12 @@ body,
 		overflow: hidden;
 		>div{
 			height: 100%;
+			padding: 15px;
 			overflow: auto;
 		}
 	}
+}
+
+.view-box{
+	min-height: 100%;
 }

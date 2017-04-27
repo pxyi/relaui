@@ -4,6 +4,7 @@
 /* 字体图标 */
 @import 'module/icon.scss';
 
+/* 常用方法 */
 @import 'module/mixins.scss';
 
 /* frame */
@@ -38,3 +39,6 @@
 
 /* 插件 */
 @import 'module/plug.scss';
+
+/* 常用样式 */
+@import 'module/base.scss';

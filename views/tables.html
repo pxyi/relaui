@@ -1,0 +1,173 @@
+<div class="view-box">
+	<!-- <h1>表格<small>自定义表格</small></h1> -->
+	<div class="ui-quote">自定义表格</div>
+	<div class="ui-tabs-box">
+		<div class="ui-tabs-title">
+			<ul>
+				<li class="active"><a href="javascript: void(0);">预览</a></li>
+				<li><a href="javascript: void(0);">源码</a></li>
+			</ul>
+		</div>
+		<div class="ui-tabs-body">
+			<div class="active ui-padding-row-15">
+				<div class="ui-table-box html">
+					<table class="ui-table" id="table">
+						<colgroup>
+						  <col width="50">
+						  <col width="150">
+						  <col width="150">
+						  <col width="200">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>姓名</th>
+								<th>民族</th>
+								<th>出生日期</th>
+								<th>座右铭</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>黄埔</td>
+								<td>汉族</td>
+								<td>1994-08-14</td>
+								<td>知天命，尽人事。得之我幸，失之我命，仅此而已</td>
+							</tr>
+							<tr>
+								<td>黄二傻</td>
+								<td>二傻族</td>
+								<td>1996-06-14</td>
+								<td>国宝级二傻，俗称小媳妇</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="ui-tip">
+					<span class="ui-padding-col-5">选择效果：</span>
+					<select name="" id="border" style="color: #666;" class="ui-margin-col-10">
+						<option value="无">有无表格边框</option>
+						<option value="">ui-border=""</option>
+						<option value="row">ui-border="row"</option>
+						<option value="col">ui-border="col"</option>
+						<option value="all">ui-border="all"</option>
+					</select>
+					<select name="" id="background" style="color: #666;" class="ui-margin-col-10">
+						<option value="-1">有无背景</option>
+						<option value="odd">ui-background="odd"</option>
+						<option value="even">ui-background="even"</option>
+					</select>
+					<select name="" id="align" style="color: #666;" class="ui-margin-col-10">
+						<option value="无">文字对齐方式</option>
+						<option value="left">ui-align="left"</option>
+						<option value="center">ui-align="center"</option>
+						<option value="right">ui-align="right"</option>
+					</select>
+					<select name="" id="hover" style="color: #666;" class="ui-margin-col-10">
+						<option value="无">鼠标划过背景</option>
+						<option value="">ui-hover=""</option>
+					</select>
+					<span class="ui-color-blue">以下属性均加在类名为“ui-table”的table标签上</span>
+				</div>
+				<div class="ui-table-box">
+					<table class="ui-table" ui-border="all">
+						  <col width="200">
+						  <col width="200">
+						  <col width="180">
+						  <col width="180">
+						  <col width="180">
+						  <col width="180">
+						<thead>
+							<tr>
+								<th>属性</th>
+								<th>效果</th>
+								<th colspan="4">可选值</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>ui-border</td>
+								<td>控制表格边框/分割线</td>
+								<td>空：只有table最外面有边框</td>
+								<td>row：每行都有上下边框</td>
+								<td>col：每列都有左右边框</td>
+								<td>all：行列均有边框</td>
+							</tr>
+							<tr>
+								<td>ui-background</td>
+								<td>控制tbody部分tr背景</td>
+								<td>odd：奇数行有背景</td>
+								<td>even：偶数行有背景</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>ui-align</td>
+								<td>控制字体对齐方式</td>
+								<td>left：向左对齐</td>
+								<td>center：居中对齐</td>
+								<td>right：向右对齐</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>ui-hover</td>
+								<td>控制鼠标经过tr背景</td>
+								<td colspan="4">空：放上去有背景</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div>
+				<textarea name="" style="height: 560px;" id="preDemo" readonly class="ui-pre-code"></textarea>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+$('#border').on('change', function () {
+	var _value = $(this).val();
+	if(_value == '无'){
+		$('#table').removeAttr('ui-border');
+	}else{
+		$('#table').attr('ui-border', _value);
+	}
+	$('#preDemo').val($('.ui-table-box.html').html().replace(' id="table"', ''));
+});
+$('#background').on('change', function () {
+	var _value = $(this).val();
+	if(_value == '无'){
+		$('#table').removeAttr('ui-background');
+	}else{
+		$('#table').attr('ui-background', _value);
+	}
+	$('#preDemo').val($('.ui-table-box.html').html().replace(' id="table"', ''));
+});
+$('#align').on('change', function () {
+	var _value = $(this).val();
+	if(_value == '无'){
+		$('#table').removeAttr('ui-align');
+	}else{
+		$('#table').attr('ui-align', _value);
+	}
+	$('#preDemo').val($('.ui-table-box.html').html().replace(' id="table"', ''));
+});
+$('#hover').on('change', function () {
+	var _value = $(this).val();
+	if(_value == '无'){
+		$('#table').removeAttr('ui-hover');
+	}else{
+		$('#table').attr('ui-hover', _value);
+	}
+	$('#preDemo').val($('.ui-table-box.html').html().replace(' id="table"', ''));
+});
+$('#preDemo').val($('.ui-table-box.html').html().replace(' id="table"', ''));
+$('#preDemo').on('dblclick', function (event) {
+	$(this).attr('readonly', false).css({'background': '#fff', 'border': 'solid 1px #999'});
+})
+$('#preDemo').on('click', function (event) {
+	event.stopPropagation();
+})
+$('body').on('click', function () {
+	$('#preDemo').attr('readonly', true).css({'background': '#eaedf1', 'border': 'solid 1px #e2eced'});
+})
+</script>

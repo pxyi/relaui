@@ -1,0 +1,75 @@
+$bgcolor: #f5f6fa;
+$bdcolor: #e1e6eb;
+$hvcolor: #f9f9fa;
+.ui-table{
+	width: 100%;
+	th,
+	td{
+		padding: 8px;
+		font-size: 13px;
+	}
+	th{
+		color: #777;
+	}
+	td{
+		color: #444;
+	}
+	thead tr{
+		background: $bgcolor;
+	}
+	&[ui-hover] tbody tr:hover{
+		background: $hvcolor;
+		@include transition(background .2s);
+	}
+	&[ui-background='even'] tbody tr:nth-child(even){
+		background: $hvcolor;
+	}
+	&[ui-background='odd'] tbody tr:nth-child(odd){
+		background: $hvcolor;
+	}
+	&[ui-border]{
+		border: solid 1px $bdcolor;
+	}
+	&[ui-border='all']{
+		thead th{
+			border-right: solid 1px $bdcolor;
+		}
+		tbody td{
+			border-right: solid 1px $bdcolor;
+		}
+		thead tr{
+			border-bottom: solid 1px $bdcolor;
+		}
+		tbody tr{
+			border-bottom: solid 1px $bdcolor;
+		}
+	}
+	&[ui-border='row']{
+		thead tr{
+			border-bottom: solid 1px $bdcolor;
+		}
+		tbody tr{
+			border-bottom: solid 1px $bdcolor;
+		}
+	}
+	&[ui-border='col']{
+		thead th{
+			border-right: solid 1px $bdcolor;
+		}
+		tbody td{
+			border-right: solid 1px $bdcolor;
+		}
+	}
+	&[ui-align='left'] th,
+	&[ui-align='left'] td{
+		text-align: left !important;
+	}
+	&[ui-align='center'] th,
+	&[ui-align='center'] td{
+		text-align: center !important;
+	}
+	&[ui-align='right'] th,
+	&[ui-align='right'] td{
+		text-align: right !important;
+	}
+}

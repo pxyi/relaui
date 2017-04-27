@@ -8,7 +8,32 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 		})
 		.state('home.iconfont', {
 			url: '/iconfont',
-			templateUrl: 'views/icon_font.html',
+			templateUrl: 'views/font.html',
+			// controller: iconFont
+		})
+		.state('home.button', {
+			url: '/button',
+			templateUrl: 'views/button.html',
+			// controller: iconFont
+		})
+		.state('home.form', {
+			url: '/form',
+			templateUrl: 'views/form.html',
+			// controller: iconFont
+		})
+		.state('home.tables', {
+			url: '/tables',
+			templateUrl: 'views/tables.html',
+			// controller: iconFont
+		})
+		.state('home.tabs', {
+			url: '/tabs',
+			templateUrl: 'views/tabs.html',
+			// controller: iconFont
+		})
+		.state('home.loading', {
+			url: '/loading',
+			templateUrl: 'views/loading.html',
 			// controller: iconFont
 		})
 });
