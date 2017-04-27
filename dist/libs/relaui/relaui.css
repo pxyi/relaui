@@ -1,0 +1,484 @@
+@charset "UTF-8";
+/* reset */
+body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style: normal;
+  font-weight: normal; }
+
+ol, ul {
+  list-style: none; }
+
+caption, th {
+  text-align: left; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal; }
+
+q:before, q:after {
+  content: ''; }
+
+abbr, acronym {
+  border: 0;
+  font-variant: normal; }
+
+sup {
+  vertical-align: text-top; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+sub {
+  vertical-align: text-bottom; }
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit; }
+
+body {
+  font: 14px/1.5 \5FAE\8F6F\96C5\9ED1,sans-serif; }
+
+.clearfix:after {
+  content: "\0020";
+  height: 0;
+  display: block;
+  clear: both; }
+
+.clearfix {
+  zoom: 1; }
+
+em, i {
+  font-style: normal; }
+
+img {
+  display: block;
+  border: 0; }
+
+*, :after, :before {
+  box-sizing: border-box; }
+
+.hide {
+  display: none !important; }
+
+.show {
+  display: block !important; }
+
+/** 滚动条 **/
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px; }
+
+::-webkit-scrollbar-button:vertical {
+  display: none; }
+
+::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
+  background-color: #e2e2e2; }
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0.3); }
+
+::-webkit-scrollbar-thumb:vertical:hover {
+  background-color: rgba(0, 0, 0, 0.35); }
+
+::-webkit-scrollbar-thumb:vertical:active {
+  background-color: rgba(0, 0, 0, 0.38); }
+
+/* 字体图标 */
+@font-face {
+  font-family: "relaicon";
+  src: url("font/iconfont.eot?t=1492672378505");
+  /* IE9*/
+  src: url("font/iconfont.eot?t=1492672378505#iefix") format("embedded-opentype"), url("font/iconfont.woff?t=1492672378505") format("woff"), url("font/iconfont.ttf?t=1492672378505") format("truetype"), url("font/iconfont.svg?t=1492672378505#iconfont") format("svg");
+  /* iOS 4.1- */ }
+
+.ui-icon {
+  font-family: "relaicon" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+/* top and left center */
+/* frame */
+html,
+body,
+.body {
+  height: 100%;
+  overflow: hidden; }
+
+.ui-header {
+  width: 100%;
+  height: 50px;
+  padding-left: 200px;
+  text-align: right;
+  background: #373d41;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 998;
+  -webkit-transition: padding 0.25s ease;
+  -o-transition: padding 0.25s ease;
+  transition: padding 0.25s ease; }
+  .ui-header > div {
+    display: inline-block;
+    height: 50px;
+    color: #eee;
+    line-height: 50px;
+    border-left: solid 1px #2a2f32;
+    cursor: pointer;
+    -webkit-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease; }
+    .ui-header > div:hover {
+      background: #2a2f32; }
+  .ui-header .ui-notice {
+    padding: 0 15px; }
+    .ui-header .ui-notice span {
+      display: inline-block;
+      font-size: 12px;
+      color: #fff;
+      background: #ff9900;
+      border-radius: 5px;
+      padding: 2px 5px;
+      margin-left: 10px;
+      margin-top: 15px;
+      line-height: 16px;
+      vertical-align: top;
+      text-align: center; }
+
+.ui-nav {
+  width: 200px;
+  height: 100%;
+  background-color: #293038;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  -webkit-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease; }
+  .ui-nav .ui-logo {
+    width: 100%;
+    height: 50px;
+    cursor: pointer;
+    overflow: hidden;
+    background: #373d41;
+    border-right: solid 1px #2a2f32;
+    -webkit-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease; }
+    .ui-nav .ui-logo img {
+      height: 30px;
+      margin-top: 10px;
+      margin-left: 50px;
+      -webkit-transition: all 0.25s ease;
+      -o-transition: all 0.25s ease;
+      transition: all 0.25s ease; }
+    .ui-nav .ui-logo:hover {
+      background: #2a2f32; }
+  .ui-nav .ui-nav-toggle {
+    display: block;
+    height: 35px;
+    color: #a9a9a9;
+    font-size: 16px;
+    line-height: 35px;
+    text-align: center;
+    background-color: #4a5064;
+    -webkit-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease; }
+    .ui-nav .ui-nav-toggle:hover {
+      color: #eee; }
+  .ui-nav .ui-nav-items {
+    font-size: 13px; }
+    .ui-nav .ui-nav-items > li {
+      color: #eee; }
+      .ui-nav .ui-nav-items > li.active .ui-items-call {
+        opacity: 1;
+        visibility: visible; }
+      .ui-nav .ui-nav-items > li.active .ui-items-title:after {
+        -webkit-transform: rotateZ(90deg);
+        -moz-transform: rotateZ(90deg);
+        -ms-transform: rotateZ(90deg);
+        transform: rotateZ(90deg); }
+  .ui-nav .ui-items-title {
+    display: block;
+    height: 42px;
+    padding-left: 42px;
+    line-height: 42px;
+    position: relative;
+    background-color: #42485b;
+    -webkit-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease; }
+    .ui-nav .ui-items-title:hover {
+      background-color: #00c1de; }
+    .ui-nav .ui-items-title:after {
+      display: block;
+      width: 13px;
+      height: 13px;
+      content: '\e65f';
+      font-size: 10px;
+      line-height: 13px;
+      text-align: right;
+      font-weight: bold;
+      font-family: 'relaicon';
+      position: absolute;
+      right: 15px;
+      top: 14px;
+      -webkit-transition: all 0.25s ease;
+      -o-transition: all 0.25s ease;
+      transition: all 0.25s ease; }
+    .ui-nav .ui-items-title i {
+      display: block;
+      width: 20px;
+      height: 20px;
+      font-size: 16px;
+      line-height: 22px;
+      text-align: center;
+      position: absolute;
+      left: 15px;
+      top: 11px; }
+  .ui-nav .ui-items-call {
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease; }
+    .ui-nav .ui-items-call a {
+      display: block;
+      height: 40px;
+      padding-left: 45px;
+      line-height: 40px;
+      position: relative; }
+      .ui-nav .ui-items-call a:hover {
+        background-color: #4a5064; }
+      .ui-nav .ui-items-call a.active {
+        background-color: #00c1de; }
+  .ui-nav .ui-icon-show {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    position: absolute;
+    top: 11px;
+    left: 15px;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
+  .ui-nav.active {
+    width: 50px; }
+    .ui-nav.active .ui-logo img {
+      margin-left: 7px; }
+    .ui-nav.active .ui-items-title:after {
+      display: none; }
+    .ui-nav.active a:hover span {
+      opacity: 1;
+      visibility: visible;
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+      -webkit-transform: none;
+      -moz-transform: none;
+      -ms-transform: none;
+      transform: none; }
+    .ui-nav.active a > span {
+      opacity: 0;
+      visibility: hidden;
+      display: block;
+      padding: 0 8px;
+      position: absolute;
+      left: 62px;
+      white-space: nowrap;
+      background-color: rgba(41, 48, 46, 0.7);
+      -webkit-transform: translate3d(-20px, 0, 0);
+      -moz-transform: translate3d(-20px, 0, 0);
+      -ms-transform: translate3d(-20px, 0, 0);
+      transform: translate3d(-20px, 0, 0); }
+      .ui-nav.active a > span:after {
+        display: block;
+        content: '';
+        width: 0;
+        height: 0;
+        border-top: solid 5px rgba(41, 48, 46, 0.7);
+        border-left: solid 5px rgba(41, 48, 46, 0.7);
+        border-right: solid 5px rgba(41, 48, 46, 0);
+        border-bottom: solid 5px rgba(41, 48, 46, 0);
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-left: -5px;
+        margin-top: -5px;
+        -webkit-transform: rotateZ(-45deg);
+        -moz-transform: rotateZ(-45deg);
+        -ms-transform: rotateZ(-45deg);
+        transform: rotateZ(-45deg); }
+    .ui-nav.active .ui-items-call a.active {
+      background-color: #00c1de; }
+
+.ui-container {
+  width: 100%;
+  height: 100%;
+  padding-top: 50px;
+  padding-left: 200px;
+  -webkit-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease; }
+  .ui-container .ui-container-over {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden; }
+    .ui-container .ui-container-over > div {
+      height: 100%;
+      overflow: auto; }
+
+/* layout style */
+/* 导航 */
+/* form表单 */
+/* table */
+/* 按钮 */
+/* pages */
+/* loading */
+.ui-loading-box, .ui-confirm-box {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  overflow: hidden; }
+
+.ui-loading-cell {
+  width: 300px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -150px; }
+  .ui-loading-cell > p {
+    color: #fff;
+    font-size: 14px;
+    line-height: 34px; }
+  .ui-loading-cell .ui-loading-loader {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    position: relative; }
+    .ui-loading-cell .ui-loading-loader > div {
+      width: 22px;
+      height: 22px;
+      background: #fff;
+      border-radius: 50%;
+      -webkit-animation: loading 1.5s 0.25s infinite;
+      -o-animation: loading 1.5s 0.25s infinite;
+      animation: loading 1.5s 0.25s infinite; }
+    .ui-loading-cell .ui-loading-loader:before, .ui-loading-cell .ui-loading-loader:after {
+      display: block;
+      content: '';
+      width: 22px;
+      height: 22px;
+      background: #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: 0; }
+    .ui-loading-cell .ui-loading-loader:before {
+      left: -30px;
+      -webkit-animation: loading 1.5s infinite;
+      -o-animation: loading 1.5s infinite;
+      animation: loading 1.5s infinite; }
+    .ui-loading-cell .ui-loading-loader:after {
+      right: -30px;
+      -webkit-animation: loading 1.5s 0.5s infinite;
+      -o-animation: loading 1.5s 0.5s infinite;
+      animation: loading 1.5s 0.5s infinite; }
+
+@keyframes loading {
+  0% {
+    transform: scale(0); }
+  50% {
+    transform: none; }
+  100% {
+    transform: scale(0); } }
+
+@-webkit-keyframes loading {
+  0% {
+    -webkit-transform: scale(0); }
+  50% {
+    -webkit-transform: none; }
+  100% {
+    -webkit-transform: scale(0); } }
+
+.ui-confirm-box {
+  -webkit-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  transition: all 0.25s;
+  opacity: 0;
+  visibility: hidden; }
+  .ui-confirm-box > div {
+    width: 310px;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #2e3846;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -150px; }
+    .ui-confirm-box > div h4 {
+      font-size: 14px;
+      padding: 20px 30px 8px; }
+    .ui-confirm-box > div p {
+      padding: 5px 30px 20px; }
+    .ui-confirm-box > div a {
+      display: inline-block;
+      width: 120px;
+      color: #fff;
+      font-size: 13px;
+      line-height: 30px;
+      text-align: center;
+      border-radius: 5px;
+      transition: background-color .2s;
+      -webkit-transition: background-color .2s; }
+      .ui-confirm-box > div a:hover {
+        background-color: #3e4b5d !important; }
+  .ui-confirm-box.active {
+    opacity: 1;
+    visibility: visible; }
+    .ui-confirm-box.active > div {
+      -webkit-animation: confirm-show 0.5s forwards;
+      -o-animation: confirm-show 0.5s forwards;
+      animation: confirm-show 0.5s forwards; }
+  .ui-confirm-box .ui-confirm-true {
+    background-color: #f44a56; }
+  .ui-confirm-box .ui-confirm-false {
+    background-color: #795aac; }
+
+@keyframes confirm-show {
+  0% {
+    transform: translate3d(0, -30px, 0); }
+  100% {
+    transform: none; } }
+
+@-webkit-keyframes confirm-show {
+  0% {
+    -webkit-transform: translate3d(0, -30px, 0); }
+  100% {
+    -webkit-transform: none; } }
+
+/* 提示框 */
+/* 选项卡 */
+/* 插件 */

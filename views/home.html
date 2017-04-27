@@ -1,0 +1,63 @@
+<!-- header -->
+<div class="ui-header">
+	<div class="ui-notice"><i class="ui-icon">&#xe604;</i><span>16</span></div>
+</div>
+
+<!-- nav -->
+<div class="ui-nav">
+	<div class="ui-logo"><img src="dist/images/logo.png" alt=""></div>
+	<a href="javascript: void(0);" class="ui-icon ui-nav-toggle">&#xe613;</a>
+	<ul class="ui-nav-items">
+		<li>
+			<a href="javascript: void(0);" class="ui-items-title">
+				<i class="ui-icon">&#xe64b;</i>
+				<span>常用操作</span>
+			</a>
+			<div class="ui-items-call">
+				<a href="javascript: void(0);"><i class="ui-icon ui-icon-show">&#xe739;</i><span>按钮</span></a>
+				<a href="javascript: void(0);"><i class="ui-icon ui-icon-show">&#xe751;</i><span>表单</span></a>
+				<a href="javascript: void(0);"><i class="ui-icon ui-icon-show">&#xe646;</i><span>选项卡</span></a>
+				<a href="javascript: void(0);"><i class="ui-icon ui-icon-show">&#xe655;</i><span>字体</span></a>
+				<a href="javascript: void(0);"><i class="ui-icon ui-icon-show">&#xe657;</i><span>导航</span></a>
+			</div>
+		</li>
+		<li>
+			<a href="javascript: void(0);" class="ui-items-title">
+				<i class="ui-icon">&#xe667;</i>
+				<span>列表标题</span>
+			</a>
+			<div class="ui-items-call">
+				<a href="javascript: void(0);"><i class="ui-icon ui-icon-show">&#xe62d;</i><span>值01</span></a>
+				<a href="javascript: void(0);"><i class="ui-icon ui-icon-show">&#xed71;</i><span>值02</span></a>
+				<a href="javascript: void(0);"><i class="ui-icon ui-icon-show">&#xe61f;</i><span>值03</span></a>
+				<a href="javascript: void(0);"><i class="ui-icon ui-icon-show">&#xe744;</i><span>值04</span></a>
+				<a href="javascript: void(0);"><i class="ui-icon ui-icon-show">&#xe66a;</i><span>值05</span></a>
+			</div>
+		</li>
+	</ul>
+</div>
+
+<!-- nav_items -->
+
+
+<!-- container -->
+<div class="ui-container" ng-controller="viewBase">
+	<div class="ui-container-over">
+		<div ui-view></div>
+		<div class="ui-loading-box" ng-style="{display: loading ? 'block' : 'none'}">
+			<div class="ui-loading-cell">
+				<div class="ui-loading-loader"><div></div></div>
+				<p>加 载 中 . . .</p>
+			</div>
+		</div>
+		<div class="ui-confirm-box" ng-class="{active: confirm}">
+			<div>
+				<h4>确定删除此条数据吗</h4>
+				<p>
+					<a href="javascript: void(0);" class="ui-confirm-true">确定</a>
+					<a href="javascript: void(0);" class="ui-confirm-false">取消</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
