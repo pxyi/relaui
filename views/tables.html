@@ -10,38 +10,38 @@
 		</div>
 		<div class="ui-tabs-body">
 			<div class="active ui-padding-row-15">
-				<div class="ui-table-box html">
-					<table class="ui-table" id="table">
-						<colgroup>
-						  <col width="50">
-						  <col width="150">
-						  <col width="150">
-						  <col width="200">
-						</colgroup>
-						<thead>
-							<tr>
-								<th>姓名</th>
-								<th>民族</th>
-								<th>出生日期</th>
-								<th>座右铭</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>黄埔</td>
-								<td>汉族</td>
-								<td>1994-08-14</td>
-								<td>知天命，尽人事。得之我幸，失之我命，仅此而已</td>
-							</tr>
-							<tr>
-								<td>黄二傻</td>
-								<td>二傻族</td>
-								<td>1996-06-14</td>
-								<td>国宝级二傻，俗称小媳妇</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+				<div id="textHTML"><div class="ui-table-box">
+	<table class="ui-table" id="table">
+		<colgroup>
+		  <col width="50">
+		  <col width="150">
+		  <col width="150">
+		  <col width="200">
+		</colgroup>
+		<thead>
+			<tr>
+				<th>姓名</th>
+				<th>民族</th>
+				<th>出生日期</th>
+				<th>座右铭</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>黄埔</td>
+				<td>汉族</td>
+				<td>1994-08-14</td>
+				<td>知天命，尽人事。得之我幸，失之我命，仅此而已</td>
+			</tr>
+			<tr>
+				<td>黄二傻</td>
+				<td>二傻族</td>
+				<td>1996-06-14</td>
+				<td>国宝级二傻，俗称小媳妇</td>
+			</tr>
+		</tbody>
+	</table>
+</div></div>
 				<div class="ui-tip">
 					<span class="ui-padding-col-5">选择效果：</span>
 					<select name="" id="border" style="color: #666;" class="ui-margin-col-10">
@@ -52,7 +52,7 @@
 						<option value="all">ui-border="all"</option>
 					</select>
 					<select name="" id="background" style="color: #666;" class="ui-margin-col-10">
-						<option value="-1">有无背景</option>
+						<option value="无">有无背景</option>
 						<option value="odd">ui-background="odd"</option>
 						<option value="even">ui-background="even"</option>
 					</select>
@@ -96,17 +96,14 @@
 								<td>ui-background</td>
 								<td>控制tbody部分tr背景</td>
 								<td>odd：奇数行有背景</td>
-								<td>even：偶数行有背景</td>
-								<td></td>
-								<td></td>
+								<td colspan="3">even：偶数行有背景</td>
 							</tr>
 							<tr>
 								<td>ui-align</td>
 								<td>控制字体对齐方式</td>
 								<td>left：向左对齐</td>
 								<td>center：居中对齐</td>
-								<td>right：向右对齐</td>
-								<td></td>
+								<td colspan="2">right：向右对齐</td>
 							</tr>
 							<tr>
 								<td>ui-hover</td>
@@ -125,13 +122,14 @@
 </div>
 <script>
 $('#border').on('change', function () {
+	console.log(1)
 	var _value = $(this).val();
 	if(_value == '无'){
 		$('#table').removeAttr('ui-border');
 	}else{
 		$('#table').attr('ui-border', _value);
 	}
-	$('#preDemo').val($('.ui-table-box.html').html().replace(' id="table"', ''));
+	$('#preDemo').val($('#textHTML').html().replace(' id="table"', ''));
 });
 $('#background').on('change', function () {
 	var _value = $(this).val();
@@ -140,7 +138,7 @@ $('#background').on('change', function () {
 	}else{
 		$('#table').attr('ui-background', _value);
 	}
-	$('#preDemo').val($('.ui-table-box.html').html().replace(' id="table"', ''));
+	$('#preDemo').val($('#textHTML').html().replace(' id="table"', ''));
 });
 $('#align').on('change', function () {
 	var _value = $(this).val();
@@ -149,7 +147,7 @@ $('#align').on('change', function () {
 	}else{
 		$('#table').attr('ui-align', _value);
 	}
-	$('#preDemo').val($('.ui-table-box.html').html().replace(' id="table"', ''));
+	$('#preDemo').val($('#textHTML').html().replace(' id="table"', ''));
 });
 $('#hover').on('change', function () {
 	var _value = $(this).val();
@@ -158,11 +156,11 @@ $('#hover').on('change', function () {
 	}else{
 		$('#table').attr('ui-hover', _value);
 	}
-	$('#preDemo').val($('.ui-table-box.html').html().replace(' id="table"', ''));
+	$('#preDemo').val($('#textHTML').html().replace(' id="table"', ''));
 });
-$('#preDemo').val($('.ui-table-box.html').html().replace(' id="table"', ''));
+$('#preDemo').val($('#textHTML').html().replace(' id="table"', ''));
 $('#preDemo').on('dblclick', function (event) {
-	$(this).attr('readonly', false).css({'background': '#fff', 'border': 'solid 1px #999'});
+	$(this).attr('readonly', false).css({'background': '#fff', 'border': 'solid 1px #999'}).select();
 })
 $('#preDemo').on('click', function (event) {
 	event.stopPropagation();
