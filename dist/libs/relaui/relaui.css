@@ -401,6 +401,23 @@ body,
     position: absolute;
     left: 10px; }
 
+.ui-title-h2 {
+  margin: 20px 0px;
+  padding: 8px 12px 16px;
+  color: #444;
+  font-size: 17px;
+  border-bottom: solid 1px #e2eced;
+  position: relative; }
+  .ui-title-h2:before {
+    display: block;
+    content: '';
+    width: 2px;
+    height: 24px;
+    background: #00c1de;
+    position: absolute;
+    top: 10px;
+    left: 0; }
+
 /* 导航 */
 /* form表单 */
 /* table */
