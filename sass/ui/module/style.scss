@@ -14,19 +14,6 @@
 		}
 	}
 }
-.ui-quote{
-	margin-bottom: 20px;
-	padding: 12px 15px;
-	line-height: 22px;
-	border-left: 3px solid #00a2ca;
-	border-radius: 0 2px 2px 0;
-	background-color: #f2f2f2;
-	&.ui-prompt{
-		color: #d65c4f;
-		border-left-color: #d65c4f;
-		background-color: #fdf7f7;
-	}
-}
 
 .ui-pre-code{
 	width: 100%;
@@ -58,21 +45,215 @@
 	}
 }
 
-.ui-title-h2{
+
+
+
+
+
+
+
+/* title and fieldset */
+h1.ui-title{
+	padding: 20px 0 20px 5px;
+	margin-bottom: 20px;
+	font-size: 20px;
+	line-height: 20px;
+	border-bottom: solid 1px #eee;
+}
+h2.ui-title{
+	padding: 18px 0 18px 5px;
+	margin-bottom: 18px;
+	font-size: 18px;
+	line-height: 18px;
+	border-bottom: solid 1px #eee;
+}
+h3.ui-title{
+	padding: 16px 0 16px 5px;
+	margin-bottom: 16px;
+	font-size: 16px;
+	line-height: 16px;
+	border-bottom: solid 1px #eee;
+}
+.ui-quote{
+	margin-bottom: 20px;
+	padding: 12px 15px;
+	line-height: 22px;
+	border-left: solid 5px #00a2ca;
+	border-radius: 0 2px 2px 0;
+	background-color: #f2f2f2;
+	&.ui-prompt{
+		color: #d65c4f;
+		border-left-color: #d65c4f;
+		background-color: #fdf7f7;
+	}
+	&.ui-large{
+		font-size: 18px;
+		padding: 15px 20px;
+	}
+}
+.ui-tle-h2{
 	margin: 20px 0px;
-	padding: 8px 12px 16px;
+	padding: 8px 12px;
 	color: #444;
-	font-size: 17px;
+	font-size: 15px;
 	border-bottom: solid 1px #e2eced;
 	position: relative;
 	&:before{
 		display: block;
 		content: '';
-		width: 2px;
+		width: 3px;
 		height: 24px;
 		background: #00c1de;
 		position: absolute;
-		top: 10px;
+		top: 8px;
 		left: 0;
 	}
+}
+[class^="ui-panels"]{
+	margin-bottom: 15px;
+	.ui-panel-head{
+		color: #fff;
+		padding: 10px 15px;
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+	}
+	.ui-panel-body{
+		color: #555;
+		padding: 10px 15px;
+		background-color: #fff;
+		border-bottom-left-radius: 3px;
+		border-bottom-right-radius: 3px;
+	}
+	&.ui-large{
+		.ui-panel-head{
+			font-size: 18px;
+			padding: 15px 20px;
+		}
+		.ui-panel-body{
+			font-size: 15px;
+			padding: 15px 20px;
+		}
+	}
+	&.ui-small{
+		.ui-panel-head{
+			font-size: 13px;
+			padding: 5px 8px;
+		}
+		.ui-panel-body{
+			font-size: 12px;
+			padding: 5px 8px;
+		}
+	}
+}
+.ui-panels-white{
+	.ui-panel-head{
+		color: #555;
+		background-color: #fff;
+		border-bottom: solid 1px #ddd;
+	}
+}
+.ui-panels-default{
+	.ui-panel-head{
+		color: #555;
+		background-color: #e0e0e0;
+	}
+	&.ui-border .ui-panel-body{
+		border: solid 1px #ddd;
+		border-top-width: 0;
+	}
+}
+.ui-panels-normal{
+	.ui-panel-head{
+		background-color: $normal;
+	}
+	&.ui-border .ui-panel-body{
+		border: solid 1px $normal;
+		border-top-width: 0;
+	}
+}
+.ui-panels-primary{
+	.ui-panel-head{
+		background-color: $primary;
+	}
+	&.ui-border .ui-panel-body{
+		border: solid 1px $primary;
+		border-top-width: 0;
+	}
+}
+.ui-panels-success{
+	.ui-panel-head{
+		background-color: $success;
+	}
+	&.ui-border .ui-panel-body{
+		border: solid 1px $success;
+		border-top-width: 0;
+	}
+}
+.ui-panels-info{
+	.ui-panel-head{
+		background-color: $info;
+	}
+	&.ui-border .ui-panel-body{
+		border: solid 1px $info;
+		border-top-width: 0;
+	}
+}
+.ui-panels-warning{
+	.ui-panel-head{
+		background-color: $warning;
+	}
+	&.ui-border .ui-panel-body{
+		border: solid 1px $warning;
+		border-top-width: 0;
+	}
+}
+.ui-panels-deepred{
+	.ui-panel-head{
+		background-color: $deepred;
+	}
+	&.ui-border .ui-panel-body{
+		border: solid 1px $deepred;
+		border-top-width: 0;
+	}
+}
+.ui-panels-black{
+	.ui-panel-head{
+		background-color: $black;
+	}
+	&.ui-border .ui-panel-body{
+		border: solid 1px $black;
+		border-top-width: 0;
+	}
+}
+.ui-panels-maroon{
+	.ui-panel-head{
+		background-color: $maroon;
+	}
+	&.ui-border .ui-panel-body{
+		border: solid 1px $maroon;
+		border-top-width: 0;
+	}
+}
+
+
+
+/* ui-alert */
+[class^="ui-alert"]{
+	padding: 12px 15px;
+	font-size: 18px;
+	border-radius: 5px;
+	position: relative;
+	margin-bottom: 15px;
+}
+.ui-alert-success{
+	color: #3c763d;
+	background-color: #dff0d8;
+}
+.ui-alert-error{
+	color: #a94442;
+	background-color: #f2dede;
+}
+.ui-alert-tip{
+	color: #8a6d3b;
+	background-color: #fcf8e3;
 }

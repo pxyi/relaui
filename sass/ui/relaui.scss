@@ -7,6 +7,9 @@
 /* 常用方法 */
 @import 'module/mixins.scss';
 
+/* 按钮 */
+@import 'module/button.scss';
+
 /* frame */
 @import 'module/frame.scss';
 
@@ -18,9 +21,6 @@
 
 /* 导航 */
 @import 'module/nav.scss';
-
-/* 按钮 */
-@import 'module/button.scss';
 
 /* form表单 */
 @import 'module/form.scss';

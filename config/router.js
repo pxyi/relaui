@@ -36,4 +36,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			templateUrl: 'views/loading.html',
 			// controller: iconFont
 		})
+		.state('home.title', {
+			url: '/title',
+			templateUrl: 'views/title.html',
+			// controller: iconFont
+		})
 });

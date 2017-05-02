@@ -10,15 +10,21 @@ const filePath = require('./build/gulpPath.js');
 
 gulp.task('connect', () => {
 	connect.server({
-		port:8888
+		port:8888,
+		livereload: true
 	})
 });
+gulp.task('livereload', () => {
+	gulp.src('./index.html')
+			.pipe(connect.reload());
+})
 
 /* sass ui */
 gulp.task('sassUI', () => {
 	gulp.src(filePath.uiSassr)
 			.pipe(sass())
 			.pipe(gulp.dest(filePath.uiSassc))
+			.pipe(connect.reload());
 });
 /* sass system*/
 gulp.task('sassSY', () => {
@@ -58,10 +64,12 @@ gulp.task('services', () => {
 /* watch */
 gulp.task('watch', () => {
 	gulp.watch('sass/ui/module/*.scss', ['sassUI']);
+	gulp.watch('./views/*.html', ['livereload']);
 	gulp.watch(filePath.controllerr, ['controller']);
 	gulp.watch(filePath.directiver, ['directive']);
 	gulp.watch(filePath.filterr, ['filter']);
 	gulp.watch(filePath.servicesr, ['services']);
+	gulp.watch('./index.html', ['livereload']);
 });
 
 const cess = ['connect', 'watch', 'sassUI', 'sassSY', 'controller', 'directive', 'filter', 'services'];
