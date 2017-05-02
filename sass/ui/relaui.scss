@@ -10,20 +10,23 @@
 /* frame */
 @import 'module/frame.scss';
 
-/* layout style */
+/* style */
 @import 'module/style.scss';
+
+/* layout */
+@import 'module/layout.scss';
 
 /* 导航 */
 @import 'module/nav.scss';
+
+/* 按钮 */
+@import 'module/button.scss';
 
 /* form表单 */
 @import 'module/form.scss';
 
 /* table */
 @import 'module/table.scss';
-
-/* 按钮 */
-@import 'module/button.scss';
 
 /* pages */
 @import 'module/pages.scss';
