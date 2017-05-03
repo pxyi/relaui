@@ -1,5 +1,5 @@
 $raw: #fcfcfc;
-$defalut: #009688;
+$default: #009688;
 $disabled: #fbfbfb;
 $normal: #1e9fff;
 $warm: #f7b824;
@@ -89,11 +89,11 @@ $maroon: #900;
 		box-shadow: none;
 	}
 }
-.ui-btn-defalut{
-	background-color: $defalut;
-	border-color: $defalut;
+.ui-btn-default{
+	background-color: $default;
+	border-color: $default;
 	&:hover{
-		background-color: lighten($defalut, 5%);
+		background-color: lighten($default, 5%);
 	}
 }
 .ui-btn-normal{
@@ -185,11 +185,11 @@ $maroon: #900;
 		background-color: #ababab;
 	}
 }
-.ui-btn-defalut-outline{
-	color: $defalut;
-	border-color: $defalut;
+.ui-btn-default-outline{
+	color: $default;
+	border-color: $default;
 	&:hover{
-		background-color: $defalut;
+		background-color: $default;
 	}
 }
 .ui-btn-normal-outline{
