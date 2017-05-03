@@ -5,6 +5,8 @@ const connect = require('gulp-connect');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const revAll = require('gulp-rev-all');
+const minify = require('gulp-minify-css');
+const rename = require('gulp-rename');
 
 const filePath = require('./build/gulpPath.js');
 
@@ -24,7 +26,10 @@ gulp.task('sassUI', () => {
 	gulp.src(filePath.uiSassr)
 			.pipe(sass())
 			.pipe(gulp.dest(filePath.uiSassc))
-			.pipe(connect.reload());
+			.pipe(connect.reload())
+			.pipe(minify())
+			.pipe(rename({suffix: '.min'}))
+			.pipe(gulp.dest(filePath.uiSassc))
 });
 /* sass system*/
 gulp.task('sassSY', () => {
@@ -37,7 +42,13 @@ gulp.task('sassSY', () => {
 gulp.task('controller', () => {
 	gulp.src(filePath.controllerr)
 			.pipe(concat('controller.js'))
-			.pipe(gulp.dest('./config'));
+			.pipe(gulp.dest('./config'))
+			.pipe(uglify({
+				mangle: false,
+				// mangle: {except: ['$scope', '$http']}
+			}))
+			.pipe(rename('controller.min.js'))
+			.pipe(gulp.dest('./config'))
 });
 
 /* directive */
