@@ -8,37 +8,47 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 		})
 		.state('home.iconfont', {
 			url: '/iconfont',
-			templateUrl: 'views/font.html',
+			templateUrl: 'views/components/font.html',
 			// controller: iconFont
 		})
 		.state('home.button', {
 			url: '/button',
-			templateUrl: 'views/button.html',
+			templateUrl: 'views/components/button.html',
 			// controller: iconFont
 		})
 		.state('home.form', {
 			url: '/form',
-			templateUrl: 'views/form.html',
+			templateUrl: 'views/components/form.html',
 			// controller: iconFont
 		})
 		.state('home.tables', {
 			url: '/tables',
-			templateUrl: 'views/tables.html',
+			templateUrl: 'views/components/tables.html',
 			// controller: iconFont
 		})
 		.state('home.tabs', {
 			url: '/tabs',
-			templateUrl: 'views/tabs.html',
+			templateUrl: 'views/components/tabs.html',
 			// controller: iconFont
 		})
 		.state('home.loading', {
 			url: '/loading',
-			templateUrl: 'views/loading.html',
+			templateUrl: 'views/components/loading.html',
 			// controller: iconFont
 		})
 		.state('home.title', {
 			url: '/title',
-			templateUrl: 'views/title.html',
+			templateUrl: 'views/components/title.html',
 			// controller: iconFont
+		})
+		.state('home.list', {
+			url: '/list',
+			templateUrl: 'views/demo/list.html',
+			controller: 'list'
+		})
+		.state('home.test', {
+			url: '/test',
+			templateUrl: 'views/demo/test.html',
+			controller: 'test'
 		})
 });

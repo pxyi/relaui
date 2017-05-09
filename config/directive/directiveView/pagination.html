@@ -1,0 +1,29 @@
+<div class="ui-page-box" ng-show="pageTotal !== 1">
+	<a href="javascript: void(0);" ng-show="pegeNo!==1" ng-click="query.$query(pegeNo - 1)">上一页</a><!-- 
+	 --><a href="javascript: void(0);" ng-show="pegeNo!==1" ng-click="query.$query(1)">1</a><!-- 
+	 --><a href="javascript: void(0);" ng-show="pegeNo - 4 > 0 && pageTotal > 7" class="ui-page-ellipsis">…</a><!-- 
+	 --><a href="javascript: void(0);" ng-click="query.$query(pegeNo - 6)" ng-show="pegeNo - 6 > 0 && pageTotal <= 7">{{pegeNo - 6}}</a><!-- 
+	 --><a href="javascript: void(0);" ng-click="query.$query(pegeNo - 5)" ng-show="pegeNo - 5 > 0 && pageTotal <= 7">{{pegeNo - 5}}</a><!-- 
+	 --><a href="javascript: void(0);" ng-click="query.$query(pegeNo - 4)" ng-show="pegeNo - 4 > 0 && pageTotal <= 7">{{pegeNo - 4}}</a><!-- 
+	 --><a href="javascript: void(0);" ng-click="query.$query(pegeNo - 3)" ng-show="pegeNo - 3 > 0">{{pegeNo - 3}}</a><!-- 
+	 --><a href="javascript: void(0);" ng-click="query.$query(pegeNo - 2)" ng-show="pegeNo - 2 > 0">{{pegeNo - 2}}</a><!-- 
+	 --><a href="javascript: void(0);" ng-click="query.$query(pegeNo - 1)" ng-show="pegeNo - 1 > 0">{{pegeNo - 1}}</a><!-- 
+	 --><a href="javascript: void(0);" class="active">{{pegeNo}}</a><!--  
+	 --><a href="javascript: void(0);" ng-click="query.$query(pegeNo + 1)" ng-show="pegeNo + 1 <= pageTotal">{{pegeNo + 1}}</a><!-- 
+	 --><a href="javascript: void(0);" ng-click="query.$query(pegeNo + 2)" ng-show="pegeNo + 2 <= pageTotal">{{pegeNo + 2}}</a><!-- 
+	 --><a href="javascript: void(0);" ng-click="query.$query(pegeNo + 3)" ng-show="pegeNo + 3 <= pageTotal">{{pegeNo + 3}}</a><!-- 
+	 --><a href="javascript: void(0);" ng-click="query.$query(pegeNo + 4)" ng-show="pegeNo + 4 <= pageTotal && pegeNo + 4 < 8">{{pegeNo + 4}}</a><!-- 
+	 --><a href="javascript: void(0);" ng-click="query.$query(pegeNo + 5)" ng-show="pegeNo + 5 <= pageTotal && pegeNo + 5 < 8">{{pegeNo + 5}}</a><!-- 
+	 --><a href="javascript: void(0);" ng-click="query.$query(pegeNo + 6)" ng-show="pegeNo + 6 <= pageTotal && pegeNo + 6 < 8">{{pegeNo + 6}}</a><!-- 
+	 --><a href="javascript: void(0);" ng-show="pageTotal >= pegeNo + 4 && pageTotal > 7" class="ui-page-ellipsis">…</a><!-- 
+	 --><a href="javascript: void(0);" ng-show="pegeNo !== pageTotal" ng-click="query.$query(pageTotal)">{{pageTotal}}</a><!-- 
+	 --><a href="javascript: void(0);" ng-show="pegeNo !== pageTotal" ng-click="query.$query(pegeNo + 1)">下一页</a><!-- 
+	 --><span>
+		到第<!--  
+		 --><input type="text" ng-model="pagesNumber" placeholder="1" ng-change="pagesNumberChange()"><!-- 
+		 -->页<!-- 
+		 --><a href="javascript: void(0);" ng-click="query.$query(pagesNumber)">确定</a>
+	</span><!-- 
+	 --><select ng-model="pageNumber" ng-change="query.$query(1)" ng-options="pageNumber.text for pageNumber in pageNumList" ng-init="pageNumber = pageNumList[0]">
+	</select>
+</div>

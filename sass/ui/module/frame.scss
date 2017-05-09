@@ -20,7 +20,8 @@ body,
 	z-index: 998;
   @include transition(padding .25s ease);
   >div{
-  	display: inline-block;
+  	float: right;
+		padding: 0 15px;
   	height: $headerHeight;
   	color: $fontColor;
   	line-height: $headerHeight;
@@ -32,7 +33,6 @@ body,
   	}
   }
   .ui-notice{
-		padding: 0 15px;
   	span{
   		display: inline-block;
   		font-size: 12px;
@@ -159,17 +159,18 @@ body,
 			&.active{
 				background-color: #00c1de;
 			}
+			i{
+				width: 20px;
+				height: 20px;
+				line-height: 20px;
+				font-family: 'relaicon';
+				text-align: center;
+				position: absolute;
+				top: 11px;
+				left: 15px;
+				@include transition(all .5s ease);
+			}
 		}
-	}
-	.ui-icon-show{
-		width: 20px;
-		height: 20px;
-		line-height: 20px;
-		text-align: center;
-		position: absolute;
-		top: 11px;
-		left: 15px;
-		@include transition(all .5s ease);
 	}
 	&.active{
 		width: $headerHeight;
