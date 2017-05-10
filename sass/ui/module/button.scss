@@ -57,10 +57,12 @@ $maroon: #900;
 			margin: 0;
 		}
 		&.ui-small{
-			width: 28px;
-			height: 28px;
-			font-size: 14px !important;
-			line-height: 28px;
+			width: 22px;
+			height: 22px;
+			line-height: 20px;
+			>i{
+				font-size: 14px !important;
+			}
 		}
 	}
 	&.ui-width{

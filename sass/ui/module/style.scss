@@ -74,6 +74,9 @@ h3.ui-title{
 	line-height: 16px;
 	border-bottom: solid 1px #eee;
 }
+.ui-title[align="right"]{
+	text-align: centerl
+}
 .ui-quote{
 	margin-bottom: 20px;
 	padding: 12px 15px;
@@ -256,4 +259,73 @@ h3.ui-title{
 .ui-alert-tip{
 	color: #8a6d3b;
 	background-color: #fcf8e3;
+}
+
+.ui-inline-block{
+	display: inline-block;
+	position: relative;
+}
+
+.ui-query{
+	// max-height: 100px;
+	padding-right: 140px;
+	overflow: hidden;
+}
+
+.ui-query-button{
+	text-align: right;
+	position: absolute;
+	top: 0;
+	right: 0;
+	@extend .clear;
+	>*{
+		display: block;
+		margin-bottom: 15px;
+	}
+}
+.ui-query-more{
+	display: none;
+	margin-bottom: 30px;
+	text-align: center;
+	position: relative;
+	border-top: solid 1px #ddd;
+	&:before,
+	&:after{
+		display: block;
+		width: 26px;
+		content: '\e649';
+		line-height: 15px;
+		text-align: center;
+		font-family: 'relaicon';
+		border: solid 1px #ddd;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		margin-left: -13px;
+		cursor: pointer;
+		@include transition(all .5s);
+	}
+	&:after{
+		opacity: 0;
+		visibility: hidden;
+		border-top: none;
+		border-bottom-right-radius: 2px;
+		border-bottom-left-radius: 2px;
+	}
+	&:before{
+		border-bottom: none;
+		border-top-right-radius: 2px;
+		border-top-left-radius: 2px;
+		@include transform(rotateZ(180deg));
+	}
+	&.active{
+		&:after{
+			opacity: 1;
+			visibility: visible;
+		}
+		&:before{
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
 }

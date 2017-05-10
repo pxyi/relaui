@@ -1,4 +1,11 @@
 .ui-loading-box{
+  opacity: 0;
+  visibility: hidden;
+  @include transition(all .25s);
+  &.active{
+    opacity: 1;
+    visibility: visible;
+  }
 	width: 100%;
 	background: rgba(0,0,0,.5);
 	position: absolute;

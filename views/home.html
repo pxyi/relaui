@@ -1,5 +1,7 @@
 <!-- header -->
 <div class="ui-header">
+	<div><a href="javascript: void(0);">技术支持</a></div>
+	<div>phuhoang@sina.com</div>
 	<div class="ui-notice"><i class="ui-icon">&#xe604;</i><span>16</span></div>
 </div>
 
@@ -14,13 +16,12 @@
 				<span>常用场景</span>
 			</a>
 			<div class="ui-items-call">
-				<a href="javascript: void(0);" ui-sref="home.button"><i class="ui-icon ui-icon-show">&#xe622;</i><span>按钮</span></a>
-				<a href="javascript: void(0);" ui-sref="home.tables"><i class="ui-icon ui-icon-show">&#xe612;</i><span>表格</span></a>
-				<a href="javascript: void(0);" ui-sref="home.form"><i class="ui-icon ui-icon-show">&#xe66b;</i><span>表单</span></a>
-				<a href="javascript: void(0);" ui-sref="home.tabs"><i class="ui-icon ui-icon-show">&#xe627;</i><span>选项卡</span></a>
-				<a href="javascript: void(0);" ui-sref="home.iconfont"><i class="ui-icon ui-icon-show">&#xe629;</i><span>字体</span></a>
-				<!-- <a href="javascript: void(0);" ui-sref="home.loading"><i class="ui-icon ui-icon-show">&#xe626;</i><span>loading</span></a> -->
-				<a href="javascript: void(0);" ui-sref="home.title"><i class="ui-icon ui-icon-show">&#xe616;</i><span>标题与引用</span></a>
+				<a href="javascript: void(0);" ui-sref="home.button" ng-class="{active: $root.state == 'button'}"><i>&#xe622;</i><span>按钮</span></a>
+				<a href="javascript: void(0);" ui-sref="home.tables" ng-class="{active: $root.state == 'tables'}"><i>&#xe612;</i><span>表格</span></a>
+				<a href="javascript: void(0);" ui-sref="home.form" ng-class="{active: $root.state == 'form'}"><i>&#xe66b;</i><span>表单</span></a>
+				<a href="javascript: void(0);" ui-sref="home.tabs" ng-class="{active: $root.state == 'tabs'}"><i>&#xe627;</i><span>选项卡</span></a>
+				<a href="javascript: void(0);" ui-sref="home.iconfont" ng-class="{active: $root.state == 'iconfont'}"><i>&#xe629;</i><span>字体</span></a>
+				<a href="javascript: void(0);" ui-sref="home.title" ng-class="{active: $root.state == 'title'}"><i>&#xe616;</i><span>标题与引用</span></a>
 			</div>
 		</li>
 		<li>
@@ -29,12 +30,27 @@
 				<span>插件集</span>
 			</a>
 			<div class="ui-items-call">
-				<a href="javascript: void(0);"><i class="ui-icon ui-icon-show">&#xe62d;</i><span>图片上传</span></a>
-				<a href="javascript: void(0);"><i class="ui-icon ui-icon-show">&#xed71;</i><span>分页</span></a>
-				<a href="javascript: void(0);"><i class="ui-icon ui-icon-show">&#xe61f;</i><span>进度条</span></a>
-				<a href="javascript: void(0);"><i class="ui-icon ui-icon-show">&#xe744;</i><span>弹出层</span></a>
-				<a href="javascript: void(0);"><i class="ui-icon ui-icon-show">&#xe66a;</i><span>时间选择器</span></a>
-				<a href="javascript: void(0);"><i class="ui-icon ui-icon-show">&#xe66a;</i><span>地图</span></a>
+				<a href="javascript: void(0);"><i>&#xe62d;</i><span>图片上传</span></a>
+				<a href="javascript: void(0);"><i>&#xed71;</i><span>分页</span></a>
+				<a href="javascript: void(0);"><i>&#xe61f;</i><span>进度条</span></a>
+				<a href="javascript: void(0);"><i>&#xe744;</i><span>弹出层</span></a>
+				<a href="javascript: void(0);"><i>&#xe66a;</i><span>时间选择器</span></a>
+				<a href="javascript: void(0);"><i>&#xe66a;</i><span>地图</span></a>
+			</div>
+		</li>
+		<li>
+			<a href="javascript: void(0);" class="ui-items-title">
+				<i class="ui-icon">&#xe667;</i>
+				<span>场景demo</span>
+			</a>
+			<div class="ui-items-call">
+				<a href="javascript: void(0);" ui-sref="home.list"><i>&#xe62d;</i><span>列表页</span></a>
+				<a href="javascript: void(0);"><i>&#xed71;</i><span>详情页</span></a>
+				<a href="javascript: void(0);"><i>&#xe61f;</i><span>进度条</span></a>
+				<a href="javascript: void(0);"><i>&#xe744;</i><span>弹出层</span></a>
+				<a href="javascript: void(0);"><i>&#xe66a;</i><span>时间选择器</span></a>
+				<a href="javascript: void(0);"><i>&#xe66a;</i><span>地图</span></a>
+				<a href="javascript: void(0);" ui-sref="home.test"><i>&#xe66a;</i><span>test</span></a>
 			</div>
 		</li>
 	</ul>
@@ -46,24 +62,35 @@
 <!-- container -->
 <div class="ui-container" ng-controller="viewBase">
 	<div class="ui-container-over">
+		<!-- view container -->
 		<div ui-view></div>
-		<div class="ui-loading-box" ng-style="{display: loading ? 'block' : 'none'}">
+		<!-- loading -->
+		<div class="ui-loading-box" ng-class="{active: loading}">
 			<div class="ui-loading-cell">
 				<div class="ui-loading-loader"><div></div></div>
 				<p>加 载 中 . . .</p>
-			</div>
+			</div> 
 		</div>
+		<!-- confirm -->
 		<div class="ui-confirm-box" ng-class="{active: confirm}">
 			<div>
 				<h4>确定删除此条数据吗</h4>
 				<p>
-					<a href="javascript: void(0);" class="ui-confirm-true">确定</a>
-					<a href="javascript: void(0);" class="ui-confirm-false">取消</a>
+					<a href="javascript: void(0);" class="ui-confirm-true" ng-click="determine()">确定</a>
+					<a href="javascript: void(0);" class="ui-confirm-false" ng-click="confirm = false">取消</a>
 				</p>
+			</div>
+		</div>
+		<!-- 提示 -->
+	  <div class="ui-confirm-box" ng-class="{active:promptBlen}">
+			<div>
+				<h4>提示：{{promptText}}</h4>
+				<p><a href="javascript: void(0);" class="ui-confirm-false" ng-click="iKnow()">知道啦</a></p>
 			</div>
 		</div>
 	</div>
 </div>
 <script>
-	$('.ui-nav-items li').eq(0).addClass('active').children('div').css('height',$('.ui-nav-items li').eq(0).children('div').children('a').length * $('.ui-nav-items li').eq(0).children('div').children('a').height());
+	// $('.ui-nav-items li').eq(0).addClass('active').children('div').css('height',$('.ui-nav-items li').eq(0).children('div').children('a').length * $('.ui-nav-items li').eq(0).children('div').children('a').height());
+	setTimeout(function () {$('.ui-nav-toggle').click();},0)
 </script>

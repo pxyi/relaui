@@ -1,0 +1,1 @@
+app.constant('localhost', 'http://www.pxyi.github.io/');
