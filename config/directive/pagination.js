@@ -5,8 +5,8 @@ app.directive('pagination', function () {
 		replace: true,
 		scope: {
 			url: '@',															// 请求地址
-			data: '=',														// 请求结婚存储变量
-			query: '='														// 查询条件
+			data: '=',														// 请求结果存储变量
+			query: '='														// 查询条件及按钮
 		},
 		controller: function ($scope, $http) {
 			$scope.query = {};

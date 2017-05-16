@@ -626,11 +626,15 @@ input[type="radio"]{
 		>*:last-child{
 			border-right: none !important;
 		}
+		i{
+			top: 0 !important;
+			right: 0 !important;
+		}
 	}
 	.ui-input-icon[position="right"],
 	.ui-select + i.ui-icon{
-	  right: 0;
-	  top: 0;
+	  top: 1px;
+	  right: 1px;
 	}
 }
 .ui-query{

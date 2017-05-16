@@ -54,21 +54,21 @@
 
 /* title and fieldset */
 h1.ui-title{
-	padding: 20px 0 20px 5px;
+	padding: 20px 0;
 	margin-bottom: 20px;
 	font-size: 20px;
 	line-height: 20px;
 	border-bottom: solid 1px #eee;
 }
 h2.ui-title{
-	padding: 18px 0 18px 5px;
+	padding: 18px 0;
 	margin-bottom: 18px;
 	font-size: 18px;
 	line-height: 18px;
 	border-bottom: solid 1px #eee;
 }
 h3.ui-title{
-	padding: 16px 0 16px 5px;
+	padding: 16px 0;
 	margin-bottom: 16px;
 	font-size: 16px;
 	line-height: 16px;
@@ -328,4 +328,8 @@ h3.ui-title{
 			visibility: hidden;
 		}
 	}
+}
+
+.ui-relative{
+	position: relative;
 }

@@ -17,6 +17,7 @@
 						<option value="">上海</option>
 						<option value="">广州</option>
 					</select>
+					<i class="ui-icon">&#xe65c;</i>
 				</div>
 			</div>
 			<div class="ui-items-inline">
@@ -47,12 +48,12 @@
 				<label for="" class="ui-label">查询区间</label>
 				<div class="ui-input-inline ui-linkage">
 					<div>
-						<input type="text" class="ui-input ui-small" readonly onclick="laydate({istime: true, min: laydate.now(), format: 'YYYY-MM-DD'})">
+						<input type="text" class="ui-input ui-small" readonly id="start1">
 						<i class="ui-icon ui-input-icon" position="right">&#xe61f;</i>
 					</div>
 					<div class="ui-pd-col-5">至</div>
 					<div>
-						<input type="text" class="ui-input ui-small" readonly onclick="laydate({istime: true, min: laydate.now(), format: 'YYYY-MM-DD'})">
+						<input type="text" class="ui-input ui-small" readonly id="end1">
 						<i class="ui-icon ui-input-icon" position="right">&#xe61f;</i>
 					</div>
 				</div>
@@ -72,6 +73,7 @@
 						<option value="">上海</option>
 						<option value="">广州</option>
 					</select>
+					<i class="ui-icon">&#xe65c;</i>
 				</div>
 			</div>
 			<div class="ui-items-inline">
@@ -102,12 +104,12 @@
 				<label for="" class="ui-label">查询区间</label>
 				<div class="ui-input-inline ui-linkage">
 					<div>
-						<input type="text" class="ui-input ui-small" readonly onclick="laydate({istime: true, min: laydate.now(), format: 'YYYY-MM-DD'})">
+						<input type="text" class="ui-input ui-small" readonly id="start2">
 						<i class="ui-icon ui-input-icon" position="right">&#xe61f;</i>
 					</div>
 					<div class="ui-pd-col-5">至</div>
 					<div>
-						<input type="text" class="ui-input ui-small" readonly onclick="laydate({istime: true, min: laydate.now(), format: 'YYYY-MM-DD'})">
+						<input type="text" class="ui-input ui-small" readonly id="end2">
 						<i class="ui-icon ui-input-icon" position="right">&#xe61f;</i>
 					</div>
 				</div>
@@ -143,13 +145,23 @@
 					<td>{{value.birthday}}</td>
 					<td>{{value.remark}}</td>
 					<td>
-						<a href="javascript: void(0)" class="ui-btn-info ui-font ui-small" title="查看"><i>&#xe614;</i></a>
-						<a href="javascript: void(0)" class="ui-btn-success ui-font ui-small" title="编辑"><i>&#xe600;</i></a>
+						<a href="javascript: void(0)" class="ui-btn-info ui-font ui-small" title="查看" ui-sref="home.demo.details"><i>&#xe614;</i></a>
+						<a href="javascript: void(0)" class="ui-btn-success ui-font ui-small" title="编辑" ui-sref="home.comp.button"><i>&#xe600;</i></a>
 						<a href="javascript: void(0)" class="ui-btn-deepred ui-font ui-small" title="删除"><i>&#xe645;</i></a>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
-	<pagination url="json/list.json" data="data" query="query"></pagination>
+	<pagination url="{{$root.domain}}/json/list.json" data="data" query="query"></pagination>
 </div>
+<script>
+	var start1 = timeStart('#start1', 'end1');
+	var end1 = timeEnd('#end1', 'start1');
+	laydate(start1);  
+	laydate(end1); 
+	var start2 = timeStart('#start2', 'end2');
+	var end2 = timeEnd('#end2', 'start2');
+	laydate(start2);  
+	laydate(end2);
+</script>

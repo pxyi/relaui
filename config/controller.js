@@ -1,19 +1,28 @@
-app.controller('list', function($scope, $rootScope){
-	$scope.url = $rootScope.domain + 'json/list1.json';
-});
-app.controller('test', function($scope, $rootScope){
+app.controller('details', function($scope, $rootScope){
 	
 });
+app.controller('list', function($scope, $rootScope, $ajax){
+	// $ajax.get($rootScope.domain + '/json/list.json', {}).then(function (res) {
+	// 	console.log(res)
+	// }, function (e) {
+	// 	console.log(e)
+	// })
+});
 app.controller('viewBase', function($scope, $rootScope, $state, $ajax){
-	/*
+	/**
 	 *	页面加载完毕 loading 隐藏
 	 */
 	$scope.$on('$viewContentLoaded', function (event) {
-		console.log("页面加载完毕");
 		$rootScope.loading = false;
+		/**
+		 *	页面渲染完毕，判断是否需要将查询条件隐藏
+		 */
+		if(document.querySelectorAll('.ui-query-box')){
+			relaui.queryMore();
+		}
 	})
 
-	/* 
+	/** 
 	 *	控制 loading 事件
 	 *	$scope.$emit('loading', blen) 
 	 *  	blen: true   ---- 显示 loading
@@ -23,7 +32,7 @@ app.controller('viewBase', function($scope, $rootScope, $state, $ajax){
 		$scope.loading = data;
 	});
 
-	/* 
+	/** 
 	 *	控制 prompt 事件
 	 *	$scope.$emit('loading', obj)
 	 *	
@@ -40,7 +49,7 @@ app.controller('viewBase', function($scope, $rootScope, $state, $ajax){
 		$scope.href = data.href;
 		$scope.params = data.params;
 	});
-	/*
+	/**
 	 *	点击按钮是否跳转
 	 */
 	$scope.iKnow = function () {
@@ -51,21 +60,25 @@ app.controller('viewBase', function($scope, $rootScope, $state, $ajax){
 		}
 	}
 
-	/*
+	/**
 	 *	控制 confirm 事件
 	 *	$scope.$emit('confirm');
 	 *
-	 *	点击确定抛出 confirm 事件
-	 *
+	 *	点击确定按钮，向下抛出 confirm 事件
 	 */
 	$scope.$on('confirm', function (e, data) {
 	 	$scope.confirm = true;
 	});
-	/*
-	 *	点击确定按钮执行操作
-	 */
 	$scope.determine = function () {
 		$scope.$broadcast('confirm');
 	}
 
+	/**
+	 *	根据 $rootScope.stateParent 展开相对应导航
+	 */
+	if($rootScope.stateParent === 'comp'){
+		$('.ui-nav-items > li').eq(0).children('a').click();
+	}else if($rootScope.stateParent === 'demo'){
+		$('.ui-nav-items > li').eq(2).children('a').click();
+	}
 });
