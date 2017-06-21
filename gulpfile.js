@@ -12,7 +12,7 @@ const filePath = require('./build/gulpPath.js');
 
 gulp.task('connect', () => {
 	connect.server({
-		port:8888,
+		port: 8080,
 		livereload: true
 	})
 });

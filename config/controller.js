@@ -55,9 +55,8 @@ app.controller('viewBase', function($scope, $rootScope, $state, $ajax){
 	$scope.iKnow = function () {
 		if($scope.href){
 			$state.go($scope.href, $scope.params);
-		}else{
-			$scope.promptBlen = false;
 		}
+		$scope.promptBlen = false;
 	}
 
 	/**
@@ -71,6 +70,7 @@ app.controller('viewBase', function($scope, $rootScope, $state, $ajax){
 	});
 	$scope.determine = function () {
 		$scope.$broadcast('confirm');
+		$scope.confirm = false;
 	}
 
 	/**
