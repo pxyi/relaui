@@ -9,6 +9,8 @@ app.run(function ($rootScope, $state) {
 	 *	ui-router 状态发生改变时，$rootscope 键值改变
 	 */
 	$rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams, options) {
+		// console.log(toState)
+		// $rootScope.toStateName = toState.name;
 		$rootScope.stateParent = toState.name.split('.')[1];
 		$rootScope.state = toState.name.split('.')[2];
 	});

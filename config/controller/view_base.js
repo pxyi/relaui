@@ -62,13 +62,4 @@ app.controller('viewBase', function($scope, $rootScope, $state, $ajax){
 		$scope.$broadcast('confirm');
 		$scope.confirm = false;
 	}
-
-	/**
-	 *	根据 $rootScope.stateParent 展开相对应导航
-	 */
-	if($rootScope.stateParent === 'comp'){
-		$('.ui-nav-items > li').eq(0).children('a').click();
-	}else if($rootScope.stateParent === 'demo'){
-		$('.ui-nav-items > li').eq(2).children('a').click();
-	}
 });

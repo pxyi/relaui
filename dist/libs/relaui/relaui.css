@@ -98,6 +98,10 @@ img {
   background-color: rgba(0, 0, 0, 0.38); }
 
 /* 字体图标 */
+/* 
+ *  name: 字体图标
+ *  author: phuhoang
+ */
 @font-face {
   font-family: "relaicon";
   src: url("font/iconfont.eot");
@@ -113,8 +117,16 @@ img {
   -moz-osx-font-smoothing: grayscale; }
 
 /* 常用方法 */
+/* 
+ *  name: 公共方法
+ *  author: phuhoang
+ */
 /* top and left center */
 /* 按钮 */
+/* 
+ *	name: 按钮
+ *	author: phuhoang
+ */
 /* 内置 */
 [class^="ui-btn"] {
   display: inline-block;
@@ -330,6 +342,10 @@ img {
     background-color: #900; }
 
 /* frame */
+/* 
+ *	name: 页面架构
+ *	author: phuhoang
+ */
 html,
 body,
 .body {
@@ -858,6 +874,10 @@ h3.ui-title {
   position: relative; }
 
 /* layout */
+/* 
+ *  name: 十二栏栅格布局
+ *  author: phuhoang
+ */
 .ui-wd-1,
 .ui-wd-2,
 .ui-wd-3,
@@ -1188,6 +1208,10 @@ h3.ui-title {
 
 /* 导航 */
 /* form表单 */
+/* 
+ *	name: 表单
+ *	author: phuhoang
+ */
 input,
 textarea,
 select {
@@ -1363,7 +1387,8 @@ input[type="radio"] {
     width: 100%;
     height: 35px;
     padding: 0 10px;
-    background: #fff; }
+    background: none;
+    -webkit-appearance: none; }
     .ui-form .ui-select:focus {
       border-color: #999; }
     .ui-form .ui-select + i.ui-icon {
@@ -1436,6 +1461,7 @@ input[type="radio"] {
       content: '\e72e';
       width: 18px;
       height: 18px;
+      margin-right: 6px;
       color: #fff;
       font-weight: bold;
       line-height: 17px;
@@ -1771,6 +1797,10 @@ input[type="radio"] {
     text-align: right !important; }
 
 /* pages */
+/* 
+ *	name: 分页
+ *	author: phuhoang
+ */
 .ui-page-box {
   padding: 40px 0;
   text-align: center; }
@@ -1836,6 +1866,10 @@ input[type="radio"] {
     vertical-align: top; }
 
 /* loading */
+/* 
+ *  name: 弹出层
+ *  author: phuhoang
+ */
 .ui-loading-box, .ui-confirm-box {
   opacity: 0;
   visibility: hidden;
@@ -2174,4 +2208,8 @@ input[type="radio"] {
   border-top-width: 0; }
 
 /* 插件 */
+/* 
+ *	name: 插件
+ *	author: phuhoang
+ */
 /* 常用样式 */
