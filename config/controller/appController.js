@@ -1,4 +1,4 @@
-app.controller('viewBase', function($scope, $rootScope, $state, $ajax){
+app.controller('appController', function($scope, $rootScope, $state, $ajax){
 	/**
 	 *	页面加载完毕 loading 隐藏
 	 */

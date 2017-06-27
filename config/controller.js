@@ -1,14 +1,4 @@
-app.controller('details', function($scope, $rootScope){
-	
-});
-app.controller('list', function($scope, $rootScope, $ajax){
-	// $ajax.get($rootScope.domain + '/json/list.json', {}).then(function (res) {
-	// 	console.log(res)
-	// }, function (e) {
-	// 	console.log(e)
-	// })
-});
-app.controller('viewBase', function($scope, $rootScope, $state, $ajax){
+app.controller('appController', function($scope, $rootScope, $state, $ajax){
 	/**
 	 *	页面加载完毕 loading 隐藏
 	 */
@@ -72,4 +62,14 @@ app.controller('viewBase', function($scope, $rootScope, $state, $ajax){
 		$scope.$broadcast('confirm');
 		$scope.confirm = false;
 	}
+});
+app.controller('details', function($scope, $rootScope){
+	
+});
+app.controller('list', function($scope, $rootScope, $ajax){
+	// $ajax.get($rootScope.domain + '/json/list.json', {}).then(function (res) {
+	// 	console.log(res)
+	// }, function (e) {
+	// 	console.log(e)
+	// })
 });

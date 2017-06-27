@@ -61,7 +61,7 @@ app.directive('pagination', function () {
 			/*
 			 *	打开页面查询第一页，默认查询条件由父级 controller 提供
 			 */
-			$scope.query.$query(1, $scope.query);
+			$scope.query.$query();
 		},
 		//link函数主要用于操作dom元素,给 dom元素绑定事件和监听. 
 		link: function (scope,element,attrs) {

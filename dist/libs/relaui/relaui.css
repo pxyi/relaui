@@ -1,5 +1,9 @@
 @charset "UTF-8";
 /* reset */
+/* 
+ *	name: 浏览器统一样式
+ *	author: phuhoang
+ */
 body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
   margin: 0;
   padding: 0; }
@@ -585,6 +589,10 @@ body,
   min-height: 100%; }
 
 /* style */
+/* 
+ *	name: 常用样式
+ *	author: phuhoang
+ */
 .view-box > h1 {
   color: #555;
   font-size: 20px;
@@ -1747,6 +1755,10 @@ input[type="radio"] {
     text-align: right; }
 
 /* table */
+/* 
+ *	name: 表格
+ *	author: phuhoang
+ */
 .ui-table {
   width: 100%; }
   .ui-table th,
@@ -2021,8 +2033,11 @@ input[type="radio"] {
   100% {
     transform: rotateZ(360deg); } }
 
-/* 提示框 */
 /* 选项卡 */
+/* 
+ *	name: 选项卡
+ *	author: phuhoang
+ */
 .ui-tabs-box .ui-tabs-title {
   border-bottom: solid 1px #ddd; }
   .ui-tabs-box .ui-tabs-title ul {

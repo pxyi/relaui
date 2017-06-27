@@ -1,5 +1,5 @@
 app.config(function ($stateProvider, $urlRouterProvider) {
-	$urlRouterProvider.otherwise('/home');
+	$urlRouterProvider.otherwise('/home/comp');
 	$stateProvider
 		.state('home', {
 			url: '/home',
@@ -50,9 +50,5 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			url: '/details',
 			templateUrl: 'views/demo/details.html',
 			controller: 'details'
-		})
-		.state('home.demo.test', {
-			url: '/test',
-			templateUrl: 'views/demo/test.html',
 		})
 });

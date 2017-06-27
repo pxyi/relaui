@@ -27,15 +27,16 @@ gulp.task('sassUI', () => {
 			.pipe(sass())
 			.pipe(gulp.dest(filePath.uiSassc))
 			.pipe(connect.reload())
-			.pipe(minify())
-			.pipe(rename({suffix: '.min'}))
-			.pipe(gulp.dest(filePath.uiSassc))
+			// .pipe(minify())
+			// .pipe(rename({suffix: '.min'}))
+			// .pipe(gulp.dest(filePath.uiSassc))
 });
 /* sass system*/
 gulp.task('sassSY', () => {
 	gulp.src(filePath.sySassr)
 			.pipe(sass())
 			.pipe(gulp.dest(filePath.sySassc))
+			.pipe(connect.reload())
 });
 
 /* controller */
@@ -43,12 +44,12 @@ gulp.task('controller', () => {
 	gulp.src(filePath.controllerr)
 			.pipe(concat('controller.js'))
 			.pipe(gulp.dest('./config'))
-			.pipe(uglify({
-				mangle: false,
-				// mangle: {except: ['$scope', '$http']}
-			}))
-			.pipe(rename('controller.min.js'))
-			.pipe(gulp.dest('./config'))
+			// .pipe(uglify({
+			// 	mangle: false,
+			// 	// mangle: {except: ['$scope', '$http']}
+			// }))
+			// .pipe(rename('controller.min.js'))
+			// .pipe(gulp.dest('./config'))
 });
 
 /* directive */
@@ -56,11 +57,11 @@ gulp.task('directive', () => {
 	gulp.src(filePath.directiver)
 			.pipe(concat('directive.js'))
 			.pipe(gulp.dest('./config'))
-			.pipe(uglify({
-				mangle: false,
-			}))
-			.pipe(rename('directive.min.js'))
-			.pipe(gulp.dest('./config'))
+			// .pipe(uglify({
+			// 	mangle: false,
+			// }))
+			// .pipe(rename('directive.min.js'))
+			// .pipe(gulp.dest('./config'))
 });
 
 /* filter */
@@ -68,11 +69,11 @@ gulp.task('filter', () => {
 	gulp.src(filePath.filterr)
 			.pipe(concat('filter.js'))
 			.pipe(gulp.dest('./config'))
-			.pipe(uglify({
-				mangle: false,
-			}))
-			.pipe(rename('filter.min.js'))
-			.pipe(gulp.dest('./config'))
+			// .pipe(uglify({
+			// 	mangle: false,
+			// }))
+			// .pipe(rename('filter.min.js'))
+			// .pipe(gulp.dest('./config'))
 });
 
 /* services */
@@ -80,16 +81,17 @@ gulp.task('services', () => {
 	gulp.src(filePath.servicesr)
 			.pipe(concat('services.js'))
 			.pipe(gulp.dest('./config'))
-			.pipe(uglify({
-				mangle: false,
-			}))
-			.pipe(rename('services.min.js'))
-			.pipe(gulp.dest('./config'))
+			// .pipe(uglify({
+			// 	mangle: false,
+			// }))
+			// .pipe(rename('services.min.js'))
+			// .pipe(gulp.dest('./config'))
 });
 
 /* watch */
 gulp.task('watch', () => {
 	gulp.watch('sass/ui/module/*.scss', ['sassUI']);
+	gulp.watch('sass/default/*.scss', ['sassSY']);
 	gulp.watch('./views/**/*.html', ['livereload']);
 	gulp.watch(filePath.controllerr, ['controller']);
 	gulp.watch(filePath.directiver, ['directive']);
