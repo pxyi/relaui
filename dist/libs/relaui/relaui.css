@@ -2228,3 +2228,140 @@ input[type="radio"] {
  *	author: phuhoang
  */
 /* 常用样式 */
+/* welcome */
+/* welcome */
+.ui-welcome-head ul {
+  padding-bottom: 20px; }
+
+.ui-welcome-head li {
+  float: left;
+  width: 24%;
+  border-radius: 10px;
+  overflow: hidden; }
+  .ui-welcome-head li:not(:last-child) {
+    margin-right: 1.3333333%; }
+  .ui-welcome-head li i {
+    display: block;
+    float: left;
+    width: 100px;
+    height: 100px;
+    color: #fff;
+    font-size: 30px;
+    line-height: 100px;
+    text-align: center;
+    background: #0f0; }
+  .ui-welcome-head li div {
+    height: 100px;
+    color: #999;
+    padding-left: 100px;
+    text-align: center;
+    background: #fff; }
+    .ui-welcome-head li div > h4 {
+      font-size: 32px;
+      line-height: 50px;
+      padding-top: 12px; }
+
+.ui-welcome-head li:nth-child(1) i {
+  background: #03a9f4; }
+
+.ui-welcome-head li:nth-child(2) i {
+  background: #009688; }
+
+.ui-welcome-head li:nth-child(3) i {
+  background: #ff9800; }
+
+.ui-welcome-head li:nth-child(4) i {
+  background: #ff5722; }
+
+.ui-welcome-head li:nth-child(5) i {
+  background: #607d8b; }
+
+/* login */
+/* 
+ *	name: 登录
+ *	author: phuhoang
+ */
+html, body {
+  height: 100%; }
+
+.login {
+  width: 360px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  margin-left: -180px; }
+
+.login li {
+  height: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  list-style: none;
+  margin-bottom: 15px;
+  border-radius: 3px; }
+
+.login li label {
+  display: block;
+  padding: 12px;
+  height: 50px; }
+
+.login h1 {
+  color: #fff;
+  font-size: 20px;
+  line-height: 20px;
+  margin-bottom: 20px;
+  text-align: center; }
+
+.login li input {
+  width: 300px;
+  height: 26px;
+  color: #eee;
+  background: none;
+  border: none;
+  padding-left: 10px; }
+
+.login li i {
+  color: #eee;
+  font-size: 26px;
+  line-height: 26px;
+  vertical-align: middle; }
+
+.login li:last-child {
+  padding: 0;
+  background: none; }
+
+.login li a {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 3px;
+  transition: background .2s;
+  -webkit-transition: background .2s;
+  -moz-transition: background .2s;
+  background: #0bd38a;
+  color: #fff; }
+
+.login li a.active {
+  color: #ccc;
+  background: #58666d; }
+
+.login li a:active {
+  background: #08af72; }
+
+.login li a.active:active {
+  background: #58666d; }
+
+.login > div {
+  color: #f00; }
+
+::-webkit-input-placeholder {
+  color: #ccc; }
+
+:-moz-placeholder {
+  color: #ccc; }
+
+::-moz-placeholder {
+  color: #ccc; }
+
+:-ms-input-placeholder {
+  color: #ccc; }

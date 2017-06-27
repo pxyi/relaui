@@ -1,0 +1,54 @@
+
+/* welcome */
+.ui-welcome-head{
+	ul{
+		padding-bottom: 20px;
+	}
+	li{
+		float: left;
+		width: 24%;
+		border-radius: 10px;
+		overflow: hidden;
+		&:not(:last-child){
+			margin-right: 1.3333333%;
+		}
+		i{
+			display: block;
+			float: left;
+			width: 100px;
+			height: 100px;
+			color: #fff;
+			font-size: 30px;
+			line-height: 100px;
+			text-align: center;
+			background: #0f0;
+		}
+		div{
+			height: 100px;
+			color: #999;
+			padding-left: 100px;
+			text-align: center;
+			background: #fff;
+			> h4{
+				font-size: 32px;
+				line-height: 50px;
+				padding-top: 12px;
+			}
+		}
+	}
+	li:nth-child(1) i{
+		background: #03a9f4;
+	}
+	li:nth-child(2) i{
+		background: #009688;
+	}
+	li:nth-child(3) i{
+		background: #ff9800;
+	}
+	li:nth-child(4) i{
+		background: #ff5722;
+	}
+	li:nth-child(5) i{
+		background: #607d8b;
+	}
+}

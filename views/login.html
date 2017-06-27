@@ -1,0 +1,15 @@
+<div style="background-color: #323542; height: 100%;">
+<div class="login">
+	<h1>鱼乐贝贝商学院-后台管理系统</h1>
+	<ul>
+		<li><label for="userName"><i class="ui-icon">&#xe601;</i><input type="text" placeholder="请输入用户名" id="userNames" ng-model="userNames"></label></li>
+		<li><label for="passWord"><i class="ui-icon">&#xe652;</i><input type="text" placeholder="请输入密码" id="passWord" ng-model="passWord" ng-keyup="enter($event)"></label></li>
+		<li><a href="javascript: void(0);" ng-class="{active: loginActive}" ng-click="login()">sign in</a></li>
+	</ul>
+	<div>{{errorTip}}</div>
+</div>
+</div>
+<script>
+/* 取消浏览器自动填充账号密码 */
+$('body').on('focus', '#passWord', function () {$('#passWord').prop('type', 'password');})
+</script>
