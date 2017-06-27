@@ -129,11 +129,11 @@ h3.ui-title{
 	}
 	&.ui-large{
 		.ui-panel-head{
-			font-size: 18px;
+			font-size: 16px;
 			padding: 15px 20px;
 		}
 		.ui-panel-body{
-			font-size: 15px;
+			font-size: 14px;
 			padding: 15px 20px;
 		}
 	}
@@ -238,6 +238,20 @@ h3.ui-title{
 	}
 }
 
+.ui-elem-field{
+  border: 1px solid #e2e2e2;
+  > legend {
+    margin-left: 20px;
+    padding: 0 10px;
+    font-size: 17px;
+    font-weight: 300;
+	}
+	.ui-field-box{
+		padding: 10px 15px;
+		position: relative;
+	}
+}
+
 
 
 /* ui-alert */
@@ -281,6 +295,7 @@ h3.ui-title{
 	>*{
 		display: block;
 		margin-bottom: 15px;
+		line-height: 17px;
 	}
 }
 .ui-query-more{

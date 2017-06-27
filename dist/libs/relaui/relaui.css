@@ -143,7 +143,7 @@ img {
   [class^="ui-btn"] > i {
     font-family: 'relaicon';
     font-size: 15px;
-    line-height: 15px;
+    line-height: 20px;
     margin-right: 3px; }
   [class^="ui-btn"].ui-font {
     width: 34px;
@@ -681,10 +681,10 @@ h3.ui-title {
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px; }
   [class^="ui-panels"].ui-large .ui-panel-head {
-    font-size: 18px;
+    font-size: 16px;
     padding: 15px 20px; }
   [class^="ui-panels"].ui-large .ui-panel-body {
-    font-size: 15px;
+    font-size: 14px;
     padding: 15px 20px; }
   [class^="ui-panels"].ui-small .ui-panel-head {
     font-size: 13px;
@@ -762,6 +762,17 @@ h3.ui-title {
   border: solid 1px #900;
   border-top-width: 0; }
 
+.ui-elem-field {
+  border: 1px solid #e2e2e2; }
+  .ui-elem-field > legend {
+    margin-left: 20px;
+    padding: 0 10px;
+    font-size: 17px;
+    font-weight: 300; }
+  .ui-elem-field .ui-field-box {
+    padding: 10px 15px;
+    position: relative; }
+
 /* ui-alert */
 [class^="ui-alert"] {
   padding: 12px 15px;
@@ -797,7 +808,8 @@ h3.ui-title {
   right: 0; }
   .ui-query-button > * {
     display: block;
-    margin-bottom: 15px; }
+    margin-bottom: 15px;
+    line-height: 17px; }
 
 .ui-query-more {
   display: none;
