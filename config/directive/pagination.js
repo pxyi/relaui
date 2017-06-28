@@ -36,6 +36,7 @@ app.directive('pagination', function () {
 					method: 'get',
 					params: params
 				}).then(function (res) {
+					console.log(res)
 					$scope.$emit('loading', false);
 					/*
 					 *	将值赋给 $scope.data 
