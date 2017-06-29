@@ -20,10 +20,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 		})
 		.state('home.comp', {
 			url: '/comp',
-			template: '<div ui-view></div>',
-			controller: function ($state){
-				$state.go('home.welcome')
-			}
+			template: '<div ui-view></div>'
 		})
 		.state('home.comp.iconfont', {
 			url: '/iconfont',
