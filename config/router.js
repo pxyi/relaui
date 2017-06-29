@@ -4,6 +4,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 		.state('home', {
 			url: '/home',
 			templateUrl: 'views/home.html',
+			controller: function ($state){
+				$state.go('home.welcome')
+			}
 		})
 		.state('home.welcome', {
 			url: '/welcome',
@@ -18,6 +21,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 		.state('home.comp', {
 			url: '/comp',
 			template: '<div ui-view></div>',
+			controller: function ($state){
+				$state.go('home.welcome')
+			}
 		})
 		.state('home.comp.iconfont', {
 			url: '/iconfont',
@@ -50,6 +56,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 		.state('home.demo', {
 			url: '/demo',
 			template: '<div ui-view></div>',
+			controller: function ($state){
+				$state.go('home.welcome')
+			}
 		})
 		.state('home.demo.list', {
 			url: '/list',
