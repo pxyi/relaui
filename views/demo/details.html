@@ -1,18 +1,67 @@
-<div class="view-box">
-    <div class="ui-quote">新增课程</div>
+<div class="ui-views">
+    <div class="ui-quote">详情</div>
     <div class="ui-form">
         <form novalidate id="detailsForm" name="detailsForm">
             <div class="ui-items">
-                <label for="" class="ui-wd-2 ui-label" align="right">*名称</label>
+                <label for="" class="ui-wd-2 ui-label" align="right">*必填项</label>
                 <div class="ui-wd-3">
-                    <input type="text" class="ui-input" placeholder="请输入课程名称" name="name" ng-model="details.name" required />
+                    <input type="text" class="ui-input" placeholder="请输入" name="name" ng-model="name" required />
                 </div>
-                <div class="ui-wd-4 ui-form-tip" ng-show="detailsForm.name.$error.required">请输入名称</div>
+                <div class="ui-wd-4 ui-form-tip" ng-show="detailsForm.name.$error.required">请输入</div>
+            </div>
+            <div class="ui-items">
+                <label for="" class="ui-wd-2 ui-label" align="right">*中英文</label>
+                <div class="ui-wd-3">
+                    <input type="text" class="ui-input" placeholder="请输入名称" name="zywen" ng-model="zywen" ng-pattern="/^[\u4E00-\u9FA5A-Za-z]+$/"/>
+                </div>
+                <div class="ui-wd-4 ui-form-tip" ng-show="detailsForm.zywen.$error.pattern">只能输入中文或英文</div>
+            </div>
+            <div class="ui-items">
+                <label for="" class="ui-wd-2 ui-label" align="right">*金额</label>
+                <div class="ui-wd-3">
+                    <input type="text" class="ui-input" placeholder="请输入金额" name="price" ng-model="price" ng-pattern="/(^[1-9]([0-9]+)?(\.[0-9]{1,2})?$)|(^(0){1}$)|(^[0-9]\.[0-9]([0-9])?$)/" />
+                </div>
+                <div class="ui-wd-4 ui-form-tip" ng-show="detailsForm.price.$error.pattern">请输入正确的金额</div>
+            </div>
+            <div class="ui-items">
+                <label for="" class="ui-wd-2 ui-label" align="right">*正整数</label>
+                <div class="ui-wd-3">
+                    <input type="text" class="ui-input" placeholder="请输入正整数" name="num" ng-model="num" ng-pattern="/^[0-9]*[1-9][0-9]*$/" />
+                </div>
+                <div class="ui-wd-4 ui-form-tip" ng-show="detailsForm.num.$error.pattern">请输入正整数</div>
+            </div>
+            <div class="ui-items">
+                <label for="" class="ui-wd-2 ui-label" align="right">*手机号</label>
+                <div class="ui-wd-3">
+                    <input type="text" class="ui-input" placeholder="请输入手机号" name="phone" ng-model="phone" ng-pattern="/^1(3|4|5|7|8)\d{9}$/" />
+                </div>
+                <div class="ui-wd-4 ui-form-tip" ng-show="detailsForm.phone.$error.pattern">请输入正确的手机号</div>
+            </div>
+            <div class="ui-items">
+                <label for="" class="ui-wd-2 ui-label" align="right">*电话号</label>
+                <div class="ui-wd-3">
+                    <input type="text" class="ui-input" placeholder="请输入电话号" name="tel" ng-model="tel" ng-pattern="" />
+                </div>
+                <div class="ui-wd-4 ui-form-tip" ng-show="detailsForm.tel.$error.pattern">请输入正确的电话号</div>
+            </div>
+            <div class="ui-items">
+                <label for="" class="ui-wd-2 ui-label" align="right">*邮箱</label>
+                <div class="ui-wd-3">
+                    <input type="email" class="ui-input" placeholder="请输入邮箱" name="mail" ng-model="mail"/>
+                </div>
+                <div class="ui-wd-4 ui-form-tip" ng-show="detailsForm.mail.$error.email">请输入正确的邮箱</div>
+            </div>
+            <div class="ui-items">
+                <label for="" class="ui-wd-2 ui-label" align="right">*身份证</label>
+                <div class="ui-wd-3">
+                    <input type="text" class="ui-input" placeholder="请输入身份证" name="card" ng-model="card" ng-pattern="/^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/" />
+                </div>
+                <div class="ui-wd-4 ui-form-tip" ng-show="detailsForm.card.$error.pattern">请输入正确的身份证</div>
             </div>
             <div class="ui-items">
                 <label for="" class="ui-wd-2 ui-label" align="right">*选择图片</label>
                 <div class="ui-wd-3" style="line-height: 35px;">
-                    <label for="upfile" class="ui-btn-raw ui-small" style=" line-height: 20px">选择</label>
+                    <label for="upfile" class="ui-btn-raw ui-small">选择</label>
                     <input type="file" id="upfile" style="display: none;" />
                 </div>
             </div>
@@ -20,13 +69,15 @@
                 <label for="" class="ui-wd-2 ui-label" align="right">*状态</label>
                 <div class="ui-wd-3">
                 	<div class="ui-relative">
-                    <select name="isEnable" class="ui-select" ng-model="details.isEnable" ng-init="details.isEnable = 1">
-                        <option ng-value="1">启用</option>
-                        <option ng-value="0">禁用</option>
-                    </select>
-										<i class="ui-icon">&#xe65c;</i>
-									</div>
+                        <select name="opt" class="ui-select" ng-model="opt" ng-init="opt = -1" ng-pattern="/^[0-9]/">
+                            <option ng-value="-1">请选择</option>
+                            <option ng-value="0">禁用</option>
+                            <option ng-value="1">启用</option>
+                        </select>
+    					<i class="ui-icon">&#xe65c;</i>
+    				</div>
                 </div>
+                <div class="ui-wd-4 ui-form-tip" ng-show="detailsForm.opt.$error.pattern">请选择</div>
             </div>
         </form>
     </div>

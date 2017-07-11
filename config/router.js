@@ -62,6 +62,18 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			templateUrl: 'views/components/pagination.html',
 			controller: 'pagination'
 		})
+		.state('home.comp.map', {
+			url: '/map',
+			templateUrl: 'views/components/map.html',
+		})
+		.state('home.comp.upfile', {
+			url: '/upfile',
+			templateUrl: 'views/components/upfile.html',
+		})
+		.state('home.comp.date', {
+			url: '/date',
+			templateUrl: 'views/components/date.html',
+		})
 		.state('home.demo', {
 			url: '/demo',
 			template: '<div ui-view></div>',

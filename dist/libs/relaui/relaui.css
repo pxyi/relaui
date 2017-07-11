@@ -588,7 +588,7 @@ body,
       height: 100%;
       overflow: auto; }
 
-.view-box {
+.ui-views {
   padding: 15px;
   min-height: 100%; }
 
@@ -597,13 +597,13 @@ body,
  *	name: 常用样式
  *	author: phuhoang
  */
-.view-box > h1 {
+.ui-view > h1 {
   color: #555;
   font-size: 20px;
   line-height: 20px;
   padding: 10px 0 20px 0;
   position: relative; }
-  .view-box > h1 > small {
+  .ui-view > h1 > small {
     display: block;
     color: #999;
     font-size: 11px;

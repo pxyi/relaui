@@ -1,0 +1,79 @@
+<div class="ui-views">
+	<div class="ui-quote">选择时间-laydate</div>
+	<div class="ui-form">
+		<div class="ui-items">
+			<label for="" class="ui-label ui-wd-2" align="right">默认：</label>
+			<div class="ui-wd-3">
+				<div class="ui-relative" style="width: 267px;">
+					<input type="text" class="ui-input" readonly id="default" onclick="laydate()">
+					<i class="ui-icon ui-input-icon" position="right">&#xe61f;</i>
+				</div>
+			</div>
+		</div>
+		<div class="ui-items">
+			<label for="" class="ui-label ui-wd-2" align="right">默认值：</label>
+			<div class="ui-wd-3">
+				<div class="ui-relative" style="width: 267px;">
+					<input type="text" class="ui-input" readonly id="default" onclick="laydate()" value="2017-08-08">
+					<i class="ui-icon ui-input-icon" position="right">&#xe61f;</i>
+				</div>
+			</div>
+		</div>
+		<div class="ui-items">
+			<label for="" class="ui-label ui-wd-2" align="right">最大值：</label>
+			<div class="ui-wd-3">
+				<div class="ui-relative" style="width: 267px;">
+					<input type="text" class="ui-input" readonly id="default" onclick="laydate({max: laydate.now()})">
+					<i class="ui-icon ui-input-icon" position="right">&#xe61f;</i>
+				</div>
+			</div>
+		</div>
+		<div class="ui-items">
+			<label for="" class="ui-label ui-wd-2" align="right">最小值：</label>
+			<div class="ui-wd-3">
+				<div class="ui-relative" style="width: 267px;">
+					<input type="text" class="ui-input" readonly id="default" onclick="laydate({min: laydate.now()})">
+					<i class="ui-icon ui-input-icon" position="right">&#xe61f;</i>
+				</div>
+			</div>
+		</div>
+		<div class="ui-items">
+			<label for="" class="ui-label ui-wd-2" align="right">时间段：</label>
+			<div class="ui-wd-6">
+				<div class="ui-items-inline">
+					<div class="ui-input-inline ui-linkage">
+						<div>
+							<input type="text" class="ui-input ui-small" readonly id="start">
+							<i class="ui-icon ui-input-icon" position="right">&#xe61f;</i>
+						</div>
+						<div class="ui-pd-col-5">至</div>
+						<div>
+							<input type="text" class="ui-input ui-small" readonly id="end">
+							<i class="ui-icon ui-input-icon" position="right">&#xe61f;</i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ui-items">
+			<label for="" class="ui-label ui-wd-2" align="right">时分秒：</label>
+			<div class="ui-wd-3">
+				<div class="ui-relative" style="width: 267px;">
+					<input type="text" class="ui-input" readonly id="default" onclick="laydate({format: 'YYYY-MM-DD hh:mm:ss', istime: true})">
+					<i class="ui-icon ui-input-icon" position="right">&#xe61f;</i>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+if(!start){
+	var start = timeStart('#start', 'end');
+	var end = timeEnd('#end', 'start');
+	laydate(start);  
+	laydate(end);
+}else{
+	laydate(start);  
+	laydate(end);
+}
+</script>
