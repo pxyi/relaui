@@ -47,12 +47,24 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			url: '/title',
 			templateUrl: 'views/components/title.html',
 		})
+		.state('home.comp.alert', {
+			url: '/alert',
+			templateUrl: 'views/components/alert.html',
+			controller: 'alert'
+		})
+		.state('home.comp.editor', {
+			url: '/editor',
+			templateUrl: 'views/components/editor.html',
+			controller: 'editor'
+		})
+		.state('home.comp.pagination', {
+			url: '/pagination',
+			templateUrl: 'views/components/pagination.html',
+			controller: 'pagination'
+		})
 		.state('home.demo', {
 			url: '/demo',
 			template: '<div ui-view></div>',
-			controller: function ($state){
-				$state.go('home.welcome')
-			}
 		})
 		.state('home.demo.list', {
 			url: '/list',

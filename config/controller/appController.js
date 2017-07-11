@@ -35,6 +35,7 @@ app.controller('appController', function($scope, $rootScope, $state, $ajax){
 	 *
 	 */
 	$scope.$on('prompt', function (e, data) {
+		$scope.promptText = data.text;
 		$scope.promptBlen = true;
 		$scope.href = data.href;
 		$scope.params = data.params;
@@ -51,15 +52,17 @@ app.controller('appController', function($scope, $rootScope, $state, $ajax){
 
 	/**
 	 *	控制 confirm 事件
-	 *	$scope.$emit('confirm');
+	 *	$scope.$emit('confirm', Options);
+	 *		Options: Object  => text: string => 描述
 	 *
 	 *	点击确定按钮，向下抛出 confirm 事件
 	 */
 	$scope.$on('confirm', function (e, data) {
+		$scope.confirmText = data ? data.text : '确定删除此条数据吗？';
 	 	$scope.confirm = true;
 	});
 	$scope.determine = function () {
-		$scope.$broadcast('confirm');
+		$scope.$broadcast('confirmTrue');
 		$scope.confirm = false;
 	}
 });

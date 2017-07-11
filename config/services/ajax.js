@@ -11,6 +11,9 @@
  *
  *	$ajax.post 同上
  *		$ajax.post(url, params, scope).then(CallSuccess, CallError);
+ *
+ *	$ajax.upfile 同上
+ *		$ajax.post(url, params, scope).then(CallSuccess, CallError);
  */
 app.factory('$ajax', function ($http, $q, $rootScope, $state) {
 	var serialize = function (data){
@@ -67,6 +70,38 @@ app.factory('$ajax', function ($http, $q, $rootScope, $state) {
 				scope.$emit('prompt', {text: '网络错误，请刷新页面重试'});
 				deferred.reject(e);
 			});
+			return deferred.promise;
+		},
+		upfile: function (url, params, scope) {
+      var deferred = $q.defer();
+			params.token = $rootScope.token;
+			scope.$emit('loading', true);
+			$http({
+				url: url,
+				method: 'post',
+				headers: {
+					'Content-Type': undefined
+				},
+				transformRequest: function() {
+					var formData = new FormData();
+					for(var v in params){
+						formData.append(v, params[v]);
+					}
+					return formData;
+				}
+			}).then(function (res) {
+				scope.$emit('loading', false);
+				if(res.data.code == 1003){
+					localStorage.clear();
+					scope.$emit('prompt', {text: res.data.message, href: 'login'});
+				}else{
+					deferred.resolve(res);
+				}
+			}, function (e) {
+				scope.$emit('loading', false);
+				scope.$emit('prompt', {text: '网络错误，请刷新页面重试'});
+				deferred.reject(e);
+			})
 			return deferred.promise;
 		}
 	}

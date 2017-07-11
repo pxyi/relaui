@@ -31,11 +31,10 @@
 			</a>
 			<div class="ui-items-call">
 				<a href="javascript: void(0);"><i>&#xe62d;</i><span>图片上传</span></a>
-				<a href="javascript: void(0);"><i>&#xed71;</i><span>分页</span></a>
-				<a href="javascript: void(0);"><i>&#xe61f;</i><span>进度条</span></a>
-				<a href="javascript: void(0);"><i>&#xe744;</i><span>弹出层</span></a>
-				<a href="javascript: void(0);"><i>&#xe66a;</i><span>时间选择器</span></a>
-				<a href="javascript: void(0);"><i>&#xe66a;</i><span>地图</span></a>
+				<a href="javascript: void(0);" ui-sref="home.comp.pagination" ng-class="{active: $root.state === 'pagination'}"><i>&#xed71;</i><span>分页</span></a>
+				<a href="javascript: void(0);" ui-sref="home.comp.alert" ng-class="{active: $root.state === 'alert'}"><i>&#xe744;</i><span>弹出层</span></a>
+				<a href="javascript: void(0);"><i>&#xe61f;</i><span>时间选择器</span></a>
+				<a href="javascript: void(0);" ui-sref="home.comp.editor" ng-class="{active: $root.state === 'editor'}"><i>&#xe66a;</i><span>富文本</span></a>
 			</div>
 		</li>
 		<li>
@@ -46,11 +45,6 @@
 			<div class="ui-items-call">
 				<a href="javascript: void(0);" ui-sref="home.demo.list" ng-class="{active: $root.state === 'list'}"><i>&#xe62d;</i><span>列表页</span></a>
 				<a href="javascript: void(0);" ui-sref="home.demo.details" ng-class="{active: $root.state === 'details'}"><i>&#xed71;</i><span>详情页</span></a>
-				<a href="javascript: void(0);"><i>&#xe61f;</i><span>进度条</span></a>
-				<a href="javascript: void(0);"><i>&#xe744;</i><span>弹出层</span></a>
-				<a href="javascript: void(0);"><i>&#xe66a;</i><span>时间选择器</span></a>
-				<a href="javascript: void(0);"><i>&#xe66a;</i><span>地图</span></a>
-				<a href="javascript: void(0);" ui-sref="home.demo.test"><i>&#xe66a;</i><span>test</span></a>
 			</div>
 		</li>
 	</ul>
@@ -74,7 +68,7 @@
 		<!-- confirm -->
 		<div class="ui-confirm-box" ng-class="{active: confirm}">
 			<div>
-				<h4>确定删除此条数据吗</h4>
+				<h4>{{confirmText}}</h4>
 				<p>
 					<a href="javascript: void(0);" class="ui-confirm-true" ng-click="determine()">确定</a>
 					<a href="javascript: void(0);" class="ui-confirm-false" ng-click="confirm = false">取消</a>

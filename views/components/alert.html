@@ -1,0 +1,49 @@
+<div class="view-box ui-form">
+	<div class="ui-quote">弹出层</div>
+	<div class="ui-mg-row-20 clear">
+		<a href="javascript: ;" class="ui-btn-info" ng-click="prompt()" style="float: left;">点击弹出提示框</a>
+		<div class="ui-wd-3">
+			<input type="text" class="ui-input" placeholder="输入需要弹出的内容" ng-model="promptInput">
+		</div>
+	</div>
+	<div class="ui-tip ui-mg-row-20">
+		前端实现：$scope.$emit('prompt', options)
+		<br>
+		<span style="display: inline-block; width: 70px;"></span>
+		options: object 参数;
+		<br>
+		<span style="display: inline-block; width: 70px;"></span><span style="display: inline-block; width: 70px;"></span>
+		1、text: string (必填)
+		<br>
+		<span style="display: inline-block; width: 70px;"></span><span style="display: inline-block; width: 70px;"></span>
+		2、href: string（可选）: 点击确定时选择跳转
+	</div>
+	<div class="ui-mg-row-20 clear">
+		<a href="javascript: ;" class="ui-btn-info" ng-click="confirm()" style="float: left;">点击弹出确认框</a>
+		<div class="ui-wd-3">
+			<input type="text" class="ui-input" placeholder="输入确认窗口提示内容" ng-model="confirmInput">
+		</div>
+	</div>
+	<div class="ui-tip ui-mg-row-20">
+		前端实现：$scope.$emit('confirm', options)  
+		<br>
+		<span style="display: inline-block; width: 70px;"></span>
+		options: object 参数;
+		<br>
+		<span style="display: inline-block; width: 70px;"></span><span style="display: inline-block; width: 70px;"></span>
+		1、text: string (可选：默认为“确定删除此数据吗”)
+		<br>
+		监听确认事件：$scope.$on('confirmTrue', function (e, d){})
+	</div>
+	<div class="ui-mg-row-20 clear">
+		<a href="javascript: ;" class="ui-btn-info" ng-click="loading()" style="float: left;">点击弹出loading</a>
+	</div>
+	<div class="ui-tip ui-mg-row-20">
+		显示loading: $scope.$emit('loading', true)  
+		<br>
+		隐藏loading: $scope.$emit('loading', false)  
+	</div>
+</div>
+<style>
+	.ui-tip{line-height: 28px;}
+</style>

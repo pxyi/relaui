@@ -23,6 +23,7 @@ $maroon: #900;
 	display: inline-block;
 	color: #fff;
 	font-size: 13px;
+	line-height: 17px;
 	padding: 8px 16px;
 	border-radius: 3px;
 	border-style: solid;
@@ -34,15 +35,18 @@ $maroon: #900;
 	}
 	&.ui-large{
 		font-size: 18px;
+		line-height: 25px;
 		padding: 9px 18px;
 		border-radius: 5px;
 	}
 	&.ui-small{
 		font-size: 12px;
+		line-height: 18px;
 		padding: 5px 10px;
 	}
 	&.ui-super{
 		font-size: 10px;
+		line-height: 18px;
 		padding: 0 3px;
 	}
 	>i{

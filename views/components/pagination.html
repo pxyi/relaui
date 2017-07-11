@@ -1,0 +1,20 @@
+<div class="view-box">
+	<div class="ui-quote">分页</div>
+	<pagination url="{{$root.domain}}/json/page.json" data="data" query="query"></pagination>
+	<div class="ui-tip ui-mg-row-20">
+		前端实现：&lt;pagination url="{{$root.domain}}/json/list.json" data="data" query="query">&lt;/pagination&gt;
+		<br>
+		<span style="display: inline-block; width: 70px;"></span>
+		url: string => 请求地址
+		<br>
+		<span style="display: inline-block; width: 70px;"></span>
+		data: object => 父级controller接收结果对象
+		<br>
+		<span style="display: inline-block; width: 70px;"></span>
+		query: object => 查询条件(请求条件)
+		<br>
+	</div>
+</div>
+<style>
+	.ui-tip{line-height: 28px;}
+</style>
