@@ -17,12 +17,12 @@
  */
 app.factory('$ajax', function ($http, $q, $rootScope, $state) {
 	var serialize = function (data){
-		var val="",str="";
-		for(var item in data){
-			str=item+"="+data[item];
-			val+=str+'&';
+		var val = "", str = "";
+		for(var v in data){
+			str = v + "=" + data[v];
+			val += str + '&';
 		}
-		return val.slice(0,val.length-1);
+		return val.slice(0, val.length - 1);
 	}
 	return {
 		get: function (url, params, scope) {

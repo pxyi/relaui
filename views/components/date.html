@@ -65,6 +65,71 @@
 			</div>
 		</div>
 	</div>
+	<div class="ui-tip ui-mg-row-20">
+		前端实现：
+		<br>
+		<span style="display: inline-block; width: 70px;"></span>
+		1、默认：&lt;input onclick="laydate()"&gt;
+		<br>
+		<span style="display: inline-block; width: 70px;"></span>
+		2、定义格式：&lt;input onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})"&gt;
+		<br>
+		<span style="display: inline-block; width: 70px;"></span>
+		3、外部调用：
+		<br>
+		<span style="display: inline-block; width: 70px;"></span><span style="display: inline-block; width: 70px;"></span>
+		&lt;input id="hello" class="laydate-icon"&gt;
+		<br>
+		<span style="display: inline-block; width: 70px;"></span><span style="display: inline-block; width: 70px;"></span>
+		&lt;script>
+		<br>
+		<span style="display: inline-block; width: 70px;"></span><span style="display: inline-block; width: 70px;"></span>
+		laydate({
+		<br>
+		<span style="display: inline-block; width: 70px;"></span><span style="display: inline-block; width: 70px;"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+		  elem: '#hello', //目标元素。elem允许你传入class、tag但必须按照这种方式 '#id .class'
+		<br>
+		<span style="display: inline-block; width: 70px;"></span><span style="display: inline-block; width: 70px;"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+		  event: 'focus' //响应事件。如果没有传入event，则按照默认的click
+		<br>
+		<span style="display: inline-block; width: 70px;"></span><span style="display: inline-block; width: 70px;"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+		  format: 'YYYY/MM', // 分隔符可以任意定义，该例子表示只显示年月
+		<br>
+		<span style="display: inline-block; width: 70px;"></span><span style="display: inline-block; width: 70px;"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+		  festival: true, //显示节日
+		<br>
+		<span style="display: inline-block; width: 70px;"></span><span style="display: inline-block; width: 70px;"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+		  choose: function(datas){} //选择日期完毕的回调
+		<br>
+		<span style="display: inline-block; width: 70px;"></span><span style="display: inline-block; width: 70px;"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+		  min: laydate.now(-1), //-1代表昨天，-2代表前天，以此类推
+		<br>
+		<span style="display: inline-block; width: 70px;"></span><span style="display: inline-block; width: 70px;"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+		  max: laydate.now(+1) //+1代表明天，+2代表后天，以此类推
+		<br>
+		<span style="display: inline-block; width: 70px;"></span><span style="display: inline-block; width: 70px;"></span>
+		});
+		<br>
+		<span style="display: inline-block; width: 70px;"></span><span style="display: inline-block; width: 70px;"></span>
+		&lt;/script&gt;
+		<br>
+	</div>
+	<div class="ui-tip ui-mg-row-20">
+		时间段：
+		<br>
+		<span style="display: inline-block; width: 70px;"></span>
+		var start = timeStart('#start', 'end');
+		<br>
+		<span style="display: inline-block; width: 70px;"></span>
+		var end = timeEnd('#end', 'start');
+		<br>
+		<span style="display: inline-block; width: 70px;"></span>
+		laydate(start);  
+		<br>
+		<span style="display: inline-block; width: 70px;"></span>
+		laydate(end);
+		<br>
+	</div>
 </div>
 <script>
 if(!start){
@@ -77,3 +142,6 @@ if(!start){
 	laydate(end);
 }
 </script>
+<style>
+	.ui-tip{line-height: 28px;}
+</style>

@@ -83,6 +83,6 @@
     </div>
     <div class="ui-pd-20" align="center">
         <a href="javascript: ;" class="ui-btn-raw" ui-sref="home.demo.list">返回</a>
-        <a href="javascript: ;" class="ui-btn-normal" ng-disabled="detailsForm.$invalid" ng-click="upfile()">保存</a>
+        <a href="javascript: ;" ng-class="[detailsForm.$invalid ? 'ui-btn-disabled' : 'ui-btn-normal']">保存</a>
     </div>
 </div>
